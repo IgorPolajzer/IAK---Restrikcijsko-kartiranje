@@ -1,16 +1,110 @@
+#include <algorithm>
+#include <fstream>
 #include <iostream>
+#include <sstream>
+#include <vector>
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-int main() {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
-    auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
+using namespace std;
 
-    for (int i = 1; i <= 5; i++) {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
+vector<vector<size_t>> findRestrictionIndexes(const string& restrictionStrings, const string& fileString) {
+    vector<string> restrictions;
+    vector<vector<size_t>> indexes;
+
+    // Split CSV into strings,
+    stringstream ss(restrictionStrings);
+
+    while (ss.good()) {
+        string substr;
+        getline(ss, substr, ',');
+        restrictions.push_back(substr);
+    }
+
+    // Find indexes for restriction strings.
+    for (auto &restriction : restrictions) {
+        vector<size_t> restrictionIndexes;
+        size_t res = 0;
+        while ((res = fileString.find(restriction, res)) != string::npos) {
+            restrictionIndexes.push_back(res);
+            ++res;
+        }
+        indexes.push_back(restrictionIndexes);
+    }
+
+    return indexes;
+}
+
+int readFile(const string& fileName, string &stringFile) {
+    ifstream file(fileName);
+
+    if (!file.is_open()) {
+        cerr << "Failed to open file: " << fileName << endl;
+
+        return 1;
+    }
+
+    ostringstream buffer;
+    buffer << file.rdbuf();
+    stringFile = buffer.str();
+
+    file.close();
+
+    return 0;
+}
+
+vector<size_t> getDistances(const string& fileName, const string& restrictionStrings) {
+
+    vector<size_t> indexUnion, distances;
+    string fileString;
+
+    if (readFile(fileName, fileString) != 0) {
+        throw runtime_error("Failed to open file: " + fileString);
+    }
+
+    const vector<vector<size_t>> restrictionIndexes = findRestrictionIndexes(restrictionStrings, fileString);
+
+    if (restrictionIndexes.empty()) {
+        throw runtime_error("No restrictions found");
+    }
+
+    for (const auto& index : restrictionIndexes) {
+        indexUnion.insert(indexUnion.end(), index.begin(), index.end());
+    }
+
+    if (indexUnion[0] != 0) {
+        indexUnion.push_back(0);
+    } else if (indexUnion[indexUnion.size()] != indexUnion.size()) {
+        indexUnion.push_back(fileString.size());
+    }
+
+    // Sort all restrictions.
+    ranges::sort(indexUnion);
+
+    for (size_t  i = 0; i < indexUnion.size(); i++) {
+        for (size_t  j = i + 1; j < indexUnion.size(); j++) {
+            distances.push_back(indexUnion[j] - indexUnion[i]);
+        }
+    }
+
+    // Sort the distances.
+    ranges::sort(distances);
+
+    return distances;
+}
+
+int main(const int argc, char **argv) {
+    if (argc < 2) {
+        cerr << "Usage: " << argv[0] << " <file>" << "<restriction-strings>" << endl;
+        return 1;
+    }
+
+    const string fileName = argv[1];
+    const string restrictionStrings = argv[2];
+
+    vector<size_t> L = getDistances(fileName, restrictionStrings);
+
+    for (const auto& index : L) {
+        cout << index << ",";
     }
 
     return 0;
-    // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
 }
