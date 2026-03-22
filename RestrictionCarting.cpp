@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <ranges>
+#include <set>
 #include <stdexcept>
 
 int RestrictionCarting::readFile(const std::string& fileName, std::string& stringFile) {
@@ -60,15 +61,8 @@ std::vector<size_t> RestrictionCarting::findRestrictionIndexes(const std::string
     return indexUnion;
 }
 
-std::vector<size_t> RestrictionCarting::getDistances(const std::string& fileName, const std::string& restrictionStrings) {
+std::vector<size_t> RestrictionCarting::getDistances(const std::vector<size_t>& restrictionIndexes) {
     std::vector<size_t> distances;
-    std::string fileString;
-
-    if (readFile(fileName, fileString) != 0) {
-        throw std::runtime_error("Failed to open file: " + fileName);
-    }
-
-    const std::vector<size_t> restrictionIndexes = findRestrictionIndexes(restrictionStrings, fileString);
 
     for (size_t i = 0; i < restrictionIndexes.size(); i++) {
         for (size_t j = i + 1; j < restrictionIndexes.size(); j++) {
@@ -79,6 +73,52 @@ std::vector<size_t> RestrictionCarting::getDistances(const std::string& fileName
     // Sort the distances.
     std::ranges::sort(distances);
     return distances;
+}
+
+std::vector<size_t> RestrictionCarting::getDistances(const std::string& fileName, const std::string& restrictionStrings) {
+    std::vector<size_t> distances;
+    std::string fileString;
+
+    if (readFile(fileName, fileString) != 0) {
+        throw std::runtime_error("Failed to open file: " + fileName);
+    }
+
+    return getDistances(findRestrictionIndexes(restrictionStrings, fileString));
+}
+
+std::vector<std::vector<size_t>> RestrictionCarting::bruteForce(std::vector<size_t> &L) {
+    const size_t n = L.size();
+    std::set<std::vector<size_t>> unique_results;
+
+    std::ranges::sort(L);
+    const size_t max = L.back();
+    std::vector<std::vector<size_t>> result;// vector of Xi
+
+    // Store original L for comparison.
+    auto original_L = L;
+    std::ranges::sort(original_L);
+
+    // Remove duplicate distances from L.
+    const auto it = std::ranges::unique(L).begin();
+    L.erase(it, L.end());
+
+    do {
+        std::vector<size_t> X;
+
+        X.push_back(0);
+        for (int i = 1; i < L.size() - 1; i++) {
+            X.push_back(L[i]);
+        }
+        X.push_back(max);
+
+        // Sort before comparison.
+        std::vector<size_t> distances = getDistances(X);
+        std::ranges::sort(distances);
+
+        if (distances == original_L) unique_results.insert(X);
+    } while (std::ranges::next_permutation(L).found);
+
+    return {unique_results.begin(), unique_results.end()};
 }
 
 void RestrictionCarting::test() {
@@ -94,9 +134,23 @@ void RestrictionCarting::test() {
     for (const auto& [file, restrictions] : tests) {
         std::cout << file << " [" << restrictions << "]:" << std::endl;
         try {
+            // Construct multiset.
             std::vector<size_t> L = getDistances(folder + file, restrictions);
+            std::cout << "Multiset: ";
             for (const auto& d : L) std::cout << d << ",";
-            std::cout << "\n" << std::endl;
+            std::cout << std::endl << std::endl;
+
+            // Solve restriction carting problem.
+            std::vector<std::vector<size_t>> solutions = bruteForce(L);
+
+            std::cout << "Solution: " << std::endl;
+            for (const auto& solution: solutions) {
+                for (const auto& x : solution) {
+                    std::cout << x << ",";
+                }
+                std::cout << std::endl;
+            }
+            std::cout << std::endl << std::endl;
         } catch (const std::exception& e) {
             std::cerr << "Error: " << e.what() << std::endl;
         }

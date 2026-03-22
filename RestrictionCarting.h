@@ -17,9 +17,14 @@ public:
     static std::vector<size_t> findRestrictionIndexes(const std::string& restrictionStrings,
                                                       const std::string& fileString);
 
+    static std::vector<size_t> getDistances(const std::vector<size_t> &restrictionIndexes);
+
     // Computes all pairwise distances between restriction indexes in a file.
     static std::vector<size_t> getDistances(const std::string& fileName,
                                             const std::string& restrictionStrings);
+
+    // Brute force algorithm.
+    static std::vector<std::vector<size_t>> bruteForce(std::vector<size_t> &L);
 
     // A test function.
     static void test();
