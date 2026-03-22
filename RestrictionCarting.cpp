@@ -87,7 +87,6 @@ std::vector<size_t> RestrictionCarting::getDistances(const std::string& fileName
 }
 
 std::vector<std::vector<size_t>> RestrictionCarting::bruteForce(std::vector<size_t> &L) {
-    const size_t n = L.size();
     std::set<std::vector<size_t>> unique_results;
 
     std::ranges::sort(L);
@@ -121,6 +120,47 @@ std::vector<std::vector<size_t>> RestrictionCarting::bruteForce(std::vector<size
     return {unique_results.begin(), unique_results.end()};
 }
 
+
+std::vector<size_t> RestrictionCarting::place(std::vector<size_t> &L, std::vector<size_t> &X) {
+    if (L.empty()) {
+        return X;
+    }
+
+    // if delta (y, X).
+    size_t y = L.back();
+    bool notPresent = false;
+    std::vector<size_t> distances;
+
+    for (const auto& el : X) {
+        size_t distance = y - el;
+        distances.push_back(distance);
+        if (std::ranges::find(L, distance)==L.end()) {
+            notPresent = true;
+        }
+    }
+
+    if (!notPresent) {
+        X.push_back(y);
+
+        for (const auto& el : distances) {
+
+        }
+    }
+
+
+}
+
+std::vector<std::vector<size_t>> RestrictionCarting::branchAndBound(std::vector<size_t> &L) {
+    std::vector<std::vector<size_t>> result;
+
+    std::ranges::sort(L);
+    const size_t width = L.back();
+
+
+    return result;
+}
+
+
 void RestrictionCarting::test() {
     const std::string folder = "examples/";
     const std::vector<std::pair<std::string, std::string>> tests = {
@@ -141,7 +181,7 @@ void RestrictionCarting::test() {
             std::cout << std::endl << std::endl;
 
             // Solve restriction carting problem.
-            std::vector<std::vector<size_t>> solutions = bruteForce(L);
+            std::vector<std::vector<size_t>> solutions = branchAndBound(L);
 
             std::cout << "Solution: " << std::endl;
             for (const auto& solution: solutions) {

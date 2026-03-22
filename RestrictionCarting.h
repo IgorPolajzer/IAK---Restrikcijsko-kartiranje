@@ -26,6 +26,10 @@ public:
     // Brute force algorithm.
     static std::vector<std::vector<size_t>> bruteForce(std::vector<size_t> &L);
 
+    static std::vector<size_t> place(std::vector<size_t> &L, std::vector<size_t> &X);
+
+    static std::vector<std::vector<size_t>> branchAndBound(std::vector<size_t> &L);
+
     // A test function.
     static void test();
 };
