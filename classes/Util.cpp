@@ -39,7 +39,7 @@ std::vector<std::vector<size_t>> Util::getAllCombinations(const std::vector<size
 }
 
 std::vector<size_t> Util::findRestrictionIndexes(const std::string& restrictionStrings,
-    const std::string& fileString) {
+    const std::string& dnaString) {
     std::vector<std::string> restrictions;
     std::vector<std::vector<size_t>> indexes;
     std::vector<size_t> indexUnion;
@@ -56,7 +56,7 @@ std::vector<size_t> Util::findRestrictionIndexes(const std::string& restrictionS
     for (auto& restriction : restrictions) {
         std::vector<size_t> restrictionIndexes;
         size_t res = 0;
-        while ((res = fileString.find(restriction, res)) != std::string::npos) {
+        while ((res = dnaString.find(restriction, res)) != std::string::npos) {
             restrictionIndexes.push_back(res);
             ++res;
         }
@@ -71,7 +71,7 @@ std::vector<size_t> Util::findRestrictionIndexes(const std::string& restrictionS
 
     // Add beginning and end of the DNA.
     indexUnion.push_back(0);
-    indexUnion.push_back(fileString.size() - 1);
+    indexUnion.push_back(dnaString.size() - 1);
 
     if (!std::ranges::is_sorted(indexUnion)) std::ranges::sort(indexUnion);
 
@@ -107,4 +107,40 @@ std::string Util::readFile(const std::string& fileName) {
     stringFile = stringFile.substr(0, stringFile.find_last_not_of(" \t\n\r") + 1);
 
     return stringFile;
+}
+
+void Util::removeElements(std::vector<size_t>& array, const std::vector<size_t>& elementsToRemove) {
+    for (const auto& element : elementsToRemove) {
+        array.erase(std::ranges::remove(array, element).begin(), array.end());
+    }
+}
+
+bool Util::isDistanceOfElementsInVector(const size_t &elementOne, const std::vector<size_t> &elements,
+                                       const std::vector<size_t> &vector, std::vector<unsigned long long> distances) {
+    for (const auto& element : elements) {
+        size_t distance = elementOne - element;
+        distances.push_back(distance);
+
+        if (std::ranges::find(vector, distance)==vector.end()) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void Util::removeElementsFromVector(std::vector<size_t>& vector, const std::vector<size_t>& elementsToRemove) {
+    for (const auto& element : elementsToRemove) {
+        vector.erase(std::ranges::remove(vector, element).begin(), vector.end());
+    }
+}
+
+void Util::removeElementFromVector(std::vector<size_t>& vector, size_t element) {
+    removeElementsFromVector(vector, std::vector(1, element));
+}
+
+void Util::addElementsToVector(std::vector<size_t>& vector, const std::vector<size_t>& elementToAdd) {
+    for (const auto& element : elementToAdd) {
+        vector.push_back(element);
+    }
 }

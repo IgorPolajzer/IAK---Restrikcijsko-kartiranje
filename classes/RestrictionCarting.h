@@ -14,14 +14,14 @@ public:
     // Brute force algorithm.
     static std::vector<std::vector<size_t>> bruteForce(std::vector<size_t> &L, size_t n);
 
-    static std::vector<size_t> place(std::vector<size_t> &L, std::vector<size_t> &X);
+    static std::vector<std::vector<size_t>> place(std::vector<size_t> &L, std::vector<size_t> &X, const size_t &width);
 
-    static std::vector<std::vector<size_t>> branchAndBound(std::vector<size_t> &L);
+    static std::vector<std::vector<size_t>> partialDigest(std::vector<size_t> &L);
 
     static void solveProblem(const std::string &filePath, const std::string &restrictions, const std::string &algorithm);
 
     // A test function.
-    static void test(std::string algorithm);
+    static void test(const std::string &algorithm);
 };
 
 #endif //IZBRANI_ALGORITMI_KOMBINATORIKE_RESTRICTIONCARTING_H

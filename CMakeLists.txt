@@ -4,8 +4,8 @@ project(IZBRANI_ALGORITMI_KOMBINATORIKE)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(IZBRANI_ALGORITMI_KOMBINATORIKE main.cpp
-        RestrictionCarting.cpp
-        RestrictionCarting.h
-        Util.cpp
-        Util.h
+        classes/RestrictionCarting.cpp
+        classes/RestrictionCarting.h
+        classes/Util.cpp
+        classes/Util.h
 )

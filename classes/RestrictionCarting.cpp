@@ -33,43 +33,57 @@ std::vector<std::vector<size_t>> RestrictionCarting::bruteForce(std::vector<size
     return {unique_results.begin(), unique_results.end()};
 }
 
-std::vector<size_t> RestrictionCarting::place(std::vector<size_t> &L, std::vector<size_t> &X) {
+std::vector<std::vector<size_t>> RestrictionCarting::place(std::vector<size_t> &L, std::vector<size_t> &X, const size_t& width) {
+    std::vector<std::vector<size_t>> finalResults;
+
     if (L.empty()) {
-        return X;
-    }
+        finalResults.push_back(X);
+        return finalResults;
+    };
 
     // if delta (y, X).
-    size_t y = L.back();
-    bool notPresent = false;
-    std::vector<size_t> distances;
+    if (!std::ranges::is_sorted(L)) std::ranges::sort(L);
+    const size_t y = L.back();
+    std::vector<size_t> distancesOne;
 
-    for (const auto& el : X) {
-        size_t distance = y - el;
-        distances.push_back(distance);
-        if (std::ranges::find(L, distance)==L.end()) {
-            notPresent = true;
-        }
-    }
-
-    if (!notPresent) {
+    if (Util::isDistanceOfElementsInVector(y, X, L, distancesOne)) {
         X.push_back(y);
+        Util::removeElementsFromVector(L, distancesOne);
 
-        for (const auto& el : distances) {
-
+        std::vector<std::vector<size_t>> results = place(L, X, width);
+        for (const auto& res: results) {
+            finalResults.push_back(res);
         }
+
+        Util::removeElementFromVector(X, y);
+        Util::addElementsToVector(L, distancesOne);
     }
 
+    std::vector<size_t> distancesTwo;
+    size_t widthDifference = width - y;
+    if (Util::isDistanceOfElementsInVector(widthDifference, X, L, distancesTwo)) {
+        X.push_back(widthDifference);
+        Util::removeElementsFromVector(L, distancesTwo);
 
+        std::vector<std::vector<size_t>> results = place(L, X, width);
+        for (const auto& res: results) {
+            finalResults.push_back(res);
+        }
+
+        Util::removeElementFromVector(X, widthDifference);
+        Util::addElementsToVector(L, distancesTwo);
+    }
+
+    return finalResults;
 }
 
-std::vector<std::vector<size_t>> RestrictionCarting::branchAndBound(std::vector<size_t> &L) {
-    std::vector<std::vector<size_t>> result;
-
+std::vector<std::vector<size_t>> RestrictionCarting::partialDigest(std::vector<size_t> &L) {
     if (!std::ranges::is_sorted(L)) std::ranges::sort(L);
     const size_t width = L.back();
 
-
-    return result;
+    Util::removeElementFromVector(L, width);
+    std::vector X = { 0, width };
+    return place(L, X, width);
 }
 
 void RestrictionCarting::solveProblem(const std::string& filePath, const std::string& restrictions, const std::string& algorithm) {
@@ -88,7 +102,7 @@ void RestrictionCarting::solveProblem(const std::string& filePath, const std::st
     if (algorithm == "-bf") {
         solutions = bruteForce(L, indexes.size());
     } else if (algorithm == "-bb") {
-        solutions = branchAndBound(L);
+        solutions = partialDigest(L);
     } else {
         return;
     }
@@ -113,7 +127,7 @@ void RestrictionCarting::solveProblem(const std::string& filePath, const std::st
     std::cout << std::endl << std::endl;
 }
 
-void RestrictionCarting::test(std::string algorithm) {
+void RestrictionCarting::test(const std::string& algorithm) {
     const std::string folder = "examples/";
     const std::vector<std::pair<std::string, std::string>> tests = {
         { "DNK1.txt", "GTGTG" },
