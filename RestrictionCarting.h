@@ -20,11 +20,10 @@ public:
     static std::vector<size_t> getDistances(const std::vector<size_t> &restrictionIndexes);
 
     // Computes all pairwise distances between restriction indexes in a file.
-    static std::vector<size_t> getDistances(const std::string& fileName,
-                                            const std::string& restrictionStrings);
+    static std::string readFile(const std::string& fileName);
 
     // Brute force algorithm.
-    static std::vector<std::vector<size_t>> bruteForce(std::vector<size_t> &L);
+    static std::vector<std::vector<size_t>> bruteForce(std::vector<size_t> &L, size_t n);
 
     static std::vector<size_t> place(std::vector<size_t> &L, std::vector<size_t> &X);
 

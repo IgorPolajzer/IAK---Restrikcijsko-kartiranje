@@ -21,7 +21,9 @@ int main(const int argc, char** argv) {
     const string fileName = argv[1];
     const string restrictionStrings = argv[2];
 
-    vector<size_t> L = RestrictionCarting::getDistances(fileName, restrictionStrings);
+    std::string fileString = RestrictionCarting::readFile(fileName);
+    std::vector<size_t> indexes = RestrictionCarting::findRestrictionIndexes(restrictionStrings, fileString);
+    std::vector<size_t> L = RestrictionCarting::getDistances(indexes);
 
     for (const auto& index : L) {
         cout << index << ",";
