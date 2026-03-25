@@ -72,7 +72,48 @@ std::vector<std::vector<size_t>> RestrictionCarting::branchAndBound(std::vector<
     return result;
 }
 
-void RestrictionCarting::test() {
+void RestrictionCarting::solveProblem(const std::string& filePath, const std::string& restrictions, const std::string& algorithm) {
+    // Construct multiset.
+    std::string fileString = Util::readFile(filePath);
+    std::vector<size_t> indexes = Util::findRestrictionIndexes(restrictions, fileString);
+    std::vector<size_t> L = Util::getDistances(indexes);
+
+    std::cout << "Multiset: ";
+    for (const auto& d : L) std::cout << d << ",";
+    std::cout << std::endl << std::endl;
+
+    // Solve restriction carting problem.
+    std::vector<std::vector<size_t>> solutions;
+    auto start = std::chrono::high_resolution_clock::now();
+    if (algorithm == "-bf") {
+        solutions = bruteForce(L, indexes.size());
+    } else if (algorithm == "-bb") {
+        solutions = branchAndBound(L);
+    } else {
+        return;
+    }
+    auto stop = std::chrono::high_resolution_clock::now();
+
+    std::cout << "Solution: ";
+    if (!solutions.empty()) {
+        std::cout << std::endl;
+        for (const auto& solution: solutions) {
+            for (const auto& x : solution) {
+                std::cout << x << ",";
+            }
+            std::cout << std::endl;
+        }
+    } else {
+        std::cout << "No solution" << std::endl;
+    }
+
+    auto msDuration = duration_cast<std::chrono::milliseconds>(stop - start);
+    auto microsDuration = duration_cast<std::chrono::microseconds>(stop - start);
+    std::cout << "Execution time: " << msDuration << " -> " << microsDuration << std::endl;
+    std::cout << std::endl << std::endl;
+}
+
+void RestrictionCarting::test(std::string algorithm) {
     const std::string folder = "examples/";
     const std::vector<std::pair<std::string, std::string>> tests = {
         { "DNK1.txt", "GTGTG" },
@@ -82,40 +123,19 @@ void RestrictionCarting::test() {
         { "DNK3.txt", "TTTTTTT,GTGTCGT,ACACACA" },
     };
 
+    if (algorithm == "-bf") {
+        std::cout << "BRUTE FORCE" << std::endl << std::endl;
+    } else if (algorithm == "-bb") {
+        std::cout << "BRANCH AND BOUND" << std::endl << std::endl;
+    } else {
+        std::cout << "Algorithm not supported" << std::endl << std::endl;
+        return;
+    }
+
     for (const auto& [file, restrictions] : tests) {
         std::cout << file << " [" << restrictions << "]:" << std::endl;
         try {
-            // Construct multiset.
-            std::string fileString = Util::readFile(folder + file);
-            std::vector<size_t> indexes = Util::findRestrictionIndexes(restrictions, fileString);
-            std::vector<size_t> L = Util::getDistances(indexes);
-            std::cout << "Multiset: ";
-            for (const auto& d : L) std::cout << d << ",";
-            std::cout << std::endl << std::endl;
-
-            // Solve restriction carting problem.
-            auto start = std::chrono::high_resolution_clock::now();
-            std::vector<std::vector<size_t>> solutions = bruteForce(L, indexes.size());
-            auto stop = std::chrono::high_resolution_clock::now();
-
-            std::cout << "Solution: ";
-            if (!solutions.empty()) {
-                std::cout << std::endl;
-                for (const auto& solution: solutions) {
-                    for (const auto& x : solution) {
-                        std::cout << x << ",";
-                    }
-                    std::cout << std::endl;
-                }
-            } else {
-                std::cout << "No solution" << std::endl;
-            }
-
-            auto msDuration = duration_cast<std::chrono::milliseconds>(stop - start);
-            auto microsDuration = duration_cast<std::chrono::microseconds>(stop - start);
-            std::cout << "Execution time: " << msDuration << " -> " << microsDuration << std::endl;
-
-            std::cout << std::endl << std::endl;
+            solveProblem(folder + file, restrictions, algorithm);
         } catch (const std::exception& e) {
             std::cerr << "Error: " << e.what() << std::endl;
         }

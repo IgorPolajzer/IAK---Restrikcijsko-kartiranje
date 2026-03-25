@@ -18,8 +18,10 @@ public:
 
     static std::vector<std::vector<size_t>> branchAndBound(std::vector<size_t> &L);
 
+    static void solveProblem(const std::string &filePath, const std::string &restrictions, const std::string &algorithm);
+
     // A test function.
-    static void test();
+    static void test(std::string algorithm);
 };
 
 #endif //IZBRANI_ALGORITMI_KOMBINATORIKE_RESTRICTIONCARTING_H

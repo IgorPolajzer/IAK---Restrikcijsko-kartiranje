@@ -3,32 +3,28 @@
 #include <vector>
 
 #include "RestrictionCarting.h"
-#include "Util.h"
 
 using namespace std;
 
 int main(const int argc, char** argv) {
-    // Test mode.
-    if (argc >= 2 && string(argv[argc - 1]) == "-t") {
-        RestrictionCarting::test();
+    const std::string modeFlag = argv[1];
+    const std::string algorithmFlag = argv[2];
+
+    if (modeFlag == "-t") {
+        RestrictionCarting::test(algorithmFlag);
         return 0;
     }
 
-    if (argc < 3) {
-        cerr << "Usage: " << argv[0] << " <file> <restriction-strings> [-t]" << endl;
+    if (argc < 4) {
+        cerr << "Usage: " << endl;
+        cerr << "1.: " << argv[0] << " [-t] [-bf or -bb]" << endl;
+        cerr << "2.: " << argv[0] << " [-bf or -bb] <file-path> <CSV-DNK-sections>" << endl;
         return 1;
     }
 
-    const string fileName = argv[1];
-    const string restrictionStrings = argv[2];
-
-    std::string fileString = Util::readFile(fileName);
-    std::vector<size_t> indexes = Util::findRestrictionIndexes(restrictionStrings, fileString);
-    std::vector<size_t> L = Util::getDistances(indexes);
-
-    for (const auto& index : L) {
-        cout << index << ",";
-    }
+    const std::string filePath = argv[2];
+    const std::string restrictions = argv[3];
+    RestrictionCarting::solveProblem(filePath, restrictions, modeFlag);
 
     return 0;
 }
