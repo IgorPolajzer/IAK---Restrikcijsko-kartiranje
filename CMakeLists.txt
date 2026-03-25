@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(IZBRANI_ALGORITMI_KOMBINATORIKE main.cpp
         RestrictionCarting.cpp
         RestrictionCarting.h
+        Util.cpp
+        Util.h
 )

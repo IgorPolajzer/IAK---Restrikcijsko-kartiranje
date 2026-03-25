@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "RestrictionCarting.h"
+#include "Util.h"
 
 using namespace std;
 
@@ -21,9 +22,9 @@ int main(const int argc, char** argv) {
     const string fileName = argv[1];
     const string restrictionStrings = argv[2];
 
-    std::string fileString = RestrictionCarting::readFile(fileName);
-    std::vector<size_t> indexes = RestrictionCarting::findRestrictionIndexes(restrictionStrings, fileString);
-    std::vector<size_t> L = RestrictionCarting::getDistances(indexes);
+    std::string fileString = Util::readFile(fileName);
+    std::vector<size_t> indexes = Util::findRestrictionIndexes(restrictionStrings, fileString);
+    std::vector<size_t> L = Util::getDistances(indexes);
 
     for (const auto& index : L) {
         cout << index << ",";
