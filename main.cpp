@@ -17,8 +17,8 @@ int main(const int argc, char** argv) {
 
     if (argc < 4) {
         cerr << "Usage: " << endl;
-        cerr << "1.: " << argv[0] << " [-t] [-bf or -bb]" << endl;
-        cerr << "2.: " << argv[0] << " [-bf or -bb] <file-path> <CSV-DNK-sections>" << endl;
+        cerr << "1.: " << argv[0] << " [-t] [-bf or -pd]" << endl;
+        cerr << "2.: " << argv[0] << " [-bf or -pd] <file-path> <CSV-DNK-sections>" << endl;
         return 1;
     }
 

@@ -116,22 +116,33 @@ void Util::removeElements(std::vector<size_t>& array, const std::vector<size_t>&
 }
 
 bool Util::isDistanceOfElementsInVector(const size_t &elementOne, const std::vector<size_t> &elements,
-                                       const std::vector<size_t> &vector, std::vector<unsigned long long> distances) {
-    for (const auto& element : elements) {
-        size_t distance = elementOne - element;
-        distances.push_back(distance);
+                                       const std::vector<size_t> &vector, std::vector<unsigned long long>& distances) {
+    bool foundInVector = true;
 
-        if (std::ranges::find(vector, distance)==vector.end()) {
-            return true;
+    for (const auto& element : elements) {
+        auto distance = static_cast<long long>(elementOne - element);
+        size_t absoluteDistance = std::abs(distance);
+
+        distances.push_back(absoluteDistance);
+        if (std::ranges::find(vector, absoluteDistance)==vector.end()) {
+            foundInVector = false;
         }
     }
 
-    return false;
+    return foundInVector;
+}
+
+void Util::addAndSort(std::vector<size_t>& vector, size_t& elementToAdd) {
+    vector.push_back(elementToAdd);
+    std::ranges::sort(vector.begin(), vector.end());
 }
 
 void Util::removeElementsFromVector(std::vector<size_t>& vector, const std::vector<size_t>& elementsToRemove) {
     for (const auto& element : elementsToRemove) {
-        vector.erase(std::ranges::remove(vector, element).begin(), vector.end());
+        auto it = std::ranges::find(vector, element);
+        if (it != vector.end()) {
+            vector.erase(it);
+        }
     }
 }
 
@@ -142,5 +153,12 @@ void Util::removeElementFromVector(std::vector<size_t>& vector, size_t element) 
 void Util::addElementsToVector(std::vector<size_t>& vector, const std::vector<size_t>& elementToAdd) {
     for (const auto& element : elementToAdd) {
         vector.push_back(element);
+    }
+}
+
+void Util::deleteDistances(std::vector<size_t>& distances, const size_t& distanceToDelete) {
+    for (unsigned long long & i : distances) {
+        auto distance = static_cast<long long>(i - distanceToDelete);
+        i = std::abs(distance);
     }
 }

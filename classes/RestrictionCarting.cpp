@@ -41,13 +41,12 @@ std::vector<std::vector<size_t>> RestrictionCarting::place(std::vector<size_t> &
         return finalResults;
     };
 
-    // if delta (y, X).
     if (!std::ranges::is_sorted(L)) std::ranges::sort(L);
-    const size_t y = L.back();
-    std::vector<size_t> distancesOne;
+    size_t y = L.back();
 
+    std::vector<size_t> distancesOne;
     if (Util::isDistanceOfElementsInVector(y, X, L, distancesOne)) {
-        X.push_back(y);
+        Util::addAndSort(X, y);
         Util::removeElementsFromVector(L, distancesOne);
 
         std::vector<std::vector<size_t>> results = place(L, X, width);
@@ -62,7 +61,7 @@ std::vector<std::vector<size_t>> RestrictionCarting::place(std::vector<size_t> &
     std::vector<size_t> distancesTwo;
     size_t widthDifference = width - y;
     if (Util::isDistanceOfElementsInVector(widthDifference, X, L, distancesTwo)) {
-        X.push_back(widthDifference);
+        Util::addAndSort(X, widthDifference);
         Util::removeElementsFromVector(L, distancesTwo);
 
         std::vector<std::vector<size_t>> results = place(L, X, width);
@@ -78,11 +77,9 @@ std::vector<std::vector<size_t>> RestrictionCarting::place(std::vector<size_t> &
 }
 
 std::vector<std::vector<size_t>> RestrictionCarting::partialDigest(std::vector<size_t> &L) {
-    if (!std::ranges::is_sorted(L)) std::ranges::sort(L);
     const size_t width = L.back();
-
     Util::removeElementFromVector(L, width);
-    std::vector X = { 0, width };
+    std::vector X = {0, width};
     return place(L, X, width);
 }
 
@@ -101,7 +98,7 @@ void RestrictionCarting::solveProblem(const std::string& filePath, const std::st
     auto start = std::chrono::high_resolution_clock::now();
     if (algorithm == "-bf") {
         solutions = bruteForce(L, indexes.size());
-    } else if (algorithm == "-bb") {
+    } else if (algorithm == "-pd") {
         solutions = partialDigest(L);
     } else {
         return;
@@ -139,7 +136,7 @@ void RestrictionCarting::test(const std::string& algorithm) {
 
     if (algorithm == "-bf") {
         std::cout << "BRUTE FORCE" << std::endl << std::endl;
-    } else if (algorithm == "-bb") {
+    } else if (algorithm == "-pd") {
         std::cout << "BRANCH AND BOUND" << std::endl << std::endl;
     } else {
         std::cout << "Algorithm not supported" << std::endl << std::endl;
