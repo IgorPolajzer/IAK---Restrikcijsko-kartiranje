@@ -11,7 +11,6 @@
 class RestrictionCarting {
 public:
 
-    // Brute force algorithm.
     static std::vector<std::vector<size_t>> bruteForce(std::vector<size_t> &L, size_t n);
 
     static std::vector<std::vector<size_t>> place(std::vector<size_t> &L, std::vector<size_t> &X, const size_t &width);
@@ -20,7 +19,6 @@ public:
 
     static void solveProblem(const std::string &filePath, const std::string &restrictions, const std::string &algorithm);
 
-    // A test function.
     static void test(const std::string &algorithm);
 };
 
