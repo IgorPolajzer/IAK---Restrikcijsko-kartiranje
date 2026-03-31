@@ -1,0 +1,566 @@
+BRANCH AND BOUND
+
+DNK1.txt [GTGTG]:
+
+Restriction cut frequencies:
+[GTGTG]: 0.000977
+
+Multiset: 168,831,999,
+
+Solution: 
+0,831,999,
+0,168,999,
+Execution time [i=0]: 0 ms -> 10 us
+Execution time [i=1]: 0 ms -> 4 us
+Execution time [i=2]: 0 ms -> 2 us
+Execution time [i=3]: 0 ms -> 1 us
+Execution time [i=4]: 0 ms -> 1 us
+Execution time [i=5]: 0 ms -> 1 us
+Execution time [i=6]: 0 ms -> 1 us
+Execution time [i=7]: 0 ms -> 1 us
+Execution time [i=8]: 0 ms -> 1 us
+Execution time [i=9]: 0 ms -> 2 us
+Execution time [i=10]: 0 ms -> 1 us
+Execution time [i=11]: 0 ms -> 1 us
+Execution time [i=12]: 0 ms -> 1 us
+Execution time [i=13]: 0 ms -> 1 us
+Execution time [i=14]: 0 ms -> 1 us
+Execution time [i=15]: 0 ms -> 1 us
+Execution time [i=16]: 0 ms -> 1 us
+Execution time [i=17]: 0 ms -> 1 us
+Execution time [i=18]: 0 ms -> 1 us
+Execution time [i=19]: 0 ms -> 1 us
+Execution time [i=20]: 0 ms -> 1 us
+Execution time [i=21]: 0 ms -> 1 us
+Execution time [i=22]: 0 ms -> 1 us
+Execution time [i=23]: 0 ms -> 1 us
+Execution time [i=24]: 0 ms -> 1 us
+Execution time [i=25]: 0 ms -> 1 us
+Execution time [i=26]: 0 ms -> 1 us
+Execution time [i=27]: 0 ms -> 1 us
+Execution time [i=28]: 0 ms -> 1 us
+Execution time [i=29]: 0 ms -> 1 us
+Execution time [i=30]: 0 ms -> 1 us
+Execution time [i=31]: 0 ms -> 1 us
+Execution time [i=32]: 0 ms -> 1 us
+Execution time [i=33]: 0 ms -> 1 us
+Execution time [i=34]: 0 ms -> 1 us
+Execution time [i=35]: 0 ms -> 1 us
+Execution time [i=36]: 0 ms -> 1 us
+Execution time [i=37]: 0 ms -> 1 us
+Execution time [i=38]: 0 ms -> 1 us
+Execution time [i=39]: 0 ms -> 1 us
+Execution time [i=40]: 0 ms -> 1 us
+Execution time [i=41]: 0 ms -> 1 us
+Execution time [i=42]: 0 ms -> 1 us
+Execution time [i=43]: 0 ms -> 1 us
+Execution time [i=44]: 0 ms -> 1 us
+Execution time [i=45]: 0 ms -> 1 us
+Execution time [i=46]: 0 ms -> 1 us
+Execution time [i=47]: 0 ms -> 1 us
+Execution time [i=48]: 0 ms -> 1 us
+Execution time [i=49]: 0 ms -> 1 us
+Execution time [i=50]: 0 ms -> 1 us
+Execution time [i=51]: 0 ms -> 1 us
+Execution time [i=52]: 0 ms -> 1 us
+Execution time [i=53]: 0 ms -> 1 us
+Execution time [i=54]: 0 ms -> 1 us
+Execution time [i=55]: 0 ms -> 1 us
+Execution time [i=56]: 0 ms -> 1 us
+Execution time [i=57]: 0 ms -> 2 us
+Execution time [i=58]: 0 ms -> 1 us
+Execution time [i=59]: 0 ms -> 1 us
+Execution time [i=60]: 0 ms -> 1 us
+Execution time [i=61]: 0 ms -> 1 us
+Execution time [i=62]: 0 ms -> 1 us
+Execution time [i=63]: 0 ms -> 1 us
+Execution time [i=64]: 0 ms -> 1 us
+Execution time [i=65]: 0 ms -> 1 us
+Execution time [i=66]: 0 ms -> 1 us
+Execution time [i=67]: 0 ms -> 1 us
+Execution time [i=68]: 0 ms -> 1 us
+Execution time [i=69]: 0 ms -> 1 us
+Execution time [i=70]: 0 ms -> 1 us
+Execution time [i=71]: 0 ms -> 1 us
+Execution time [i=72]: 0 ms -> 1 us
+Execution time [i=73]: 0 ms -> 1 us
+Execution time [i=74]: 0 ms -> 1 us
+Execution time [i=75]: 0 ms -> 1 us
+Execution time [i=76]: 0 ms -> 1 us
+Execution time [i=77]: 0 ms -> 1 us
+Execution time [i=78]: 0 ms -> 1 us
+Execution time [i=79]: 0 ms -> 1 us
+Execution time [i=80]: 0 ms -> 1 us
+Execution time [i=81]: 0 ms -> 1 us
+Execution time [i=82]: 0 ms -> 1 us
+Execution time [i=83]: 0 ms -> 1 us
+Execution time [i=84]: 0 ms -> 1 us
+Execution time [i=85]: 0 ms -> 1 us
+Execution time [i=86]: 0 ms -> 1 us
+Execution time [i=87]: 0 ms -> 1 us
+Execution time [i=88]: 0 ms -> 1 us
+Execution time [i=89]: 0 ms -> 2 us
+Execution time [i=90]: 0 ms -> 1 us
+Execution time [i=91]: 0 ms -> 1 us
+Execution time [i=92]: 0 ms -> 1 us
+Execution time [i=93]: 0 ms -> 1 us
+Execution time [i=94]: 0 ms -> 1 us
+Execution time [i=95]: 0 ms -> 1 us
+Execution time [i=96]: 0 ms -> 1 us
+Execution time [i=97]: 0 ms -> 2 us
+Execution time [i=98]: 0 ms -> 1 us
+Execution time [i=99]: 0 ms -> 1 us
+
+DNK1.txt [TTCC,CTCTCT]:
+
+Restriction cut frequencies:
+[TTCC]: 0.003906
+[CTCTCT]: 0.000244
+
+Multiset: 15,47,66,73,73,88,103,113,118,139,150,165,186,189,191,216,231,238,289,304,304,377,433,506,572,619,622,695,722,737,761,808,810,911,926,999,
+
+Solution: 
+0,189,622,695,761,808,911,926,999,
+0,73,88,191,238,304,377,810,999,
+Execution time [i=0]: 0 ms -> 24 us
+Execution time [i=1]: 0 ms -> 20 us
+Execution time [i=2]: 0 ms -> 20 us
+Execution time [i=3]: 0 ms -> 20 us
+Execution time [i=4]: 0 ms -> 16 us
+Execution time [i=5]: 0 ms -> 14 us
+Execution time [i=6]: 0 ms -> 13 us
+Execution time [i=7]: 0 ms -> 15 us
+Execution time [i=8]: 0 ms -> 14 us
+Execution time [i=9]: 0 ms -> 17 us
+Execution time [i=10]: 0 ms -> 15 us
+Execution time [i=11]: 0 ms -> 16 us
+Execution time [i=12]: 0 ms -> 13 us
+Execution time [i=13]: 0 ms -> 14 us
+Execution time [i=14]: 0 ms -> 18 us
+Execution time [i=15]: 0 ms -> 12 us
+Execution time [i=16]: 0 ms -> 13 us
+Execution time [i=17]: 0 ms -> 16 us
+Execution time [i=18]: 0 ms -> 17 us
+Execution time [i=19]: 0 ms -> 16 us
+Execution time [i=20]: 0 ms -> 25 us
+Execution time [i=21]: 0 ms -> 13 us
+Execution time [i=22]: 0 ms -> 16 us
+Execution time [i=23]: 0 ms -> 14 us
+Execution time [i=24]: 0 ms -> 13 us
+Execution time [i=25]: 0 ms -> 22 us
+Execution time [i=26]: 0 ms -> 13 us
+Execution time [i=27]: 0 ms -> 15 us
+Execution time [i=28]: 0 ms -> 16 us
+Execution time [i=29]: 0 ms -> 16 us
+Execution time [i=30]: 0 ms -> 15 us
+Execution time [i=31]: 0 ms -> 14 us
+Execution time [i=32]: 0 ms -> 14 us
+Execution time [i=33]: 0 ms -> 14 us
+Execution time [i=34]: 0 ms -> 14 us
+Execution time [i=35]: 0 ms -> 13 us
+Execution time [i=36]: 0 ms -> 17 us
+Execution time [i=37]: 0 ms -> 13 us
+Execution time [i=38]: 0 ms -> 12 us
+Execution time [i=39]: 0 ms -> 13 us
+Execution time [i=40]: 0 ms -> 12 us
+Execution time [i=41]: 0 ms -> 11 us
+Execution time [i=42]: 0 ms -> 11 us
+Execution time [i=43]: 0 ms -> 11 us
+Execution time [i=44]: 0 ms -> 11 us
+Execution time [i=45]: 0 ms -> 11 us
+Execution time [i=46]: 0 ms -> 16 us
+Execution time [i=47]: 0 ms -> 15 us
+Execution time [i=48]: 0 ms -> 15 us
+Execution time [i=49]: 0 ms -> 14 us
+Execution time [i=50]: 0 ms -> 10 us
+Execution time [i=51]: 0 ms -> 12 us
+Execution time [i=52]: 0 ms -> 15 us
+Execution time [i=53]: 0 ms -> 11 us
+Execution time [i=54]: 0 ms -> 10 us
+Execution time [i=55]: 0 ms -> 11 us
+Execution time [i=56]: 0 ms -> 12 us
+Execution time [i=57]: 0 ms -> 11 us
+Execution time [i=58]: 0 ms -> 17 us
+Execution time [i=59]: 0 ms -> 12 us
+Execution time [i=60]: 0 ms -> 10 us
+Execution time [i=61]: 0 ms -> 9 us
+Execution time [i=62]: 0 ms -> 12 us
+Execution time [i=63]: 0 ms -> 14 us
+Execution time [i=64]: 0 ms -> 13 us
+Execution time [i=65]: 0 ms -> 11 us
+Execution time [i=66]: 0 ms -> 10 us
+Execution time [i=67]: 0 ms -> 11 us
+Execution time [i=68]: 0 ms -> 10 us
+Execution time [i=69]: 0 ms -> 9 us
+Execution time [i=70]: 0 ms -> 11 us
+Execution time [i=71]: 0 ms -> 9 us
+Execution time [i=72]: 0 ms -> 9 us
+Execution time [i=73]: 0 ms -> 8 us
+Execution time [i=74]: 0 ms -> 8 us
+Execution time [i=75]: 0 ms -> 12 us
+Execution time [i=76]: 0 ms -> 11 us
+Execution time [i=77]: 0 ms -> 11 us
+Execution time [i=78]: 0 ms -> 11 us
+Execution time [i=79]: 0 ms -> 11 us
+Execution time [i=80]: 0 ms -> 9 us
+Execution time [i=81]: 0 ms -> 10 us
+Execution time [i=82]: 0 ms -> 8 us
+Execution time [i=83]: 0 ms -> 23 us
+Execution time [i=84]: 0 ms -> 13 us
+Execution time [i=85]: 0 ms -> 9 us
+Execution time [i=86]: 0 ms -> 9 us
+Execution time [i=87]: 0 ms -> 10 us
+Execution time [i=88]: 0 ms -> 9 us
+Execution time [i=89]: 0 ms -> 8 us
+Execution time [i=90]: 0 ms -> 9 us
+Execution time [i=91]: 0 ms -> 9 us
+Execution time [i=92]: 0 ms -> 8 us
+Execution time [i=93]: 0 ms -> 8 us
+Execution time [i=94]: 0 ms -> 9 us
+Execution time [i=95]: 0 ms -> 9 us
+Execution time [i=96]: 0 ms -> 8 us
+Execution time [i=97]: 0 ms -> 11 us
+Execution time [i=98]: 0 ms -> 10 us
+Execution time [i=99]: 0 ms -> 9 us
+
+DNK1.txt [AAAA,CCCC,TTTT,GGGG]:
+
+Restriction cut frequencies:
+[AAAA]: 0.003906
+[CCCC]: 0.003906
+[TTTT]: 0.003906
+[GGGG]: 0.003906
+
+Multiset: 1,1,47,49,50,73,74,105,119,120,120,121,153,193,200,202,203,240,249,250,273,274,322,323,323,324,393,442,443,451,452,501,556,557,606,654,701,759,774,775,806,879,880,894,999,
+
+Solution: 
+0,119,120,193,240,393,442,443,894,999,
+0,105,556,557,606,759,806,879,880,999,
+Execution time [i=0]: 0 ms -> 33 us
+Execution time [i=1]: 0 ms -> 24 us
+Execution time [i=2]: 0 ms -> 22 us
+Execution time [i=3]: 0 ms -> 17 us
+Execution time [i=4]: 0 ms -> 14 us
+Execution time [i=5]: 0 ms -> 14 us
+Execution time [i=6]: 0 ms -> 17 us
+Execution time [i=7]: 0 ms -> 16 us
+Execution time [i=8]: 0 ms -> 17 us
+Execution time [i=9]: 0 ms -> 15 us
+Execution time [i=10]: 0 ms -> 14 us
+Execution time [i=11]: 0 ms -> 13 us
+Execution time [i=12]: 0 ms -> 12 us
+Execution time [i=13]: 0 ms -> 12 us
+Execution time [i=14]: 0 ms -> 12 us
+Execution time [i=15]: 0 ms -> 12 us
+Execution time [i=16]: 0 ms -> 28 us
+Execution time [i=17]: 0 ms -> 16 us
+Execution time [i=18]: 0 ms -> 14 us
+Execution time [i=19]: 0 ms -> 14 us
+Execution time [i=20]: 0 ms -> 16 us
+Execution time [i=21]: 0 ms -> 14 us
+Execution time [i=22]: 0 ms -> 13 us
+Execution time [i=23]: 0 ms -> 12 us
+Execution time [i=24]: 0 ms -> 16 us
+Execution time [i=25]: 0 ms -> 14 us
+Execution time [i=26]: 0 ms -> 13 us
+Execution time [i=27]: 0 ms -> 17 us
+Execution time [i=28]: 0 ms -> 20 us
+Execution time [i=29]: 0 ms -> 19 us
+Execution time [i=30]: 0 ms -> 15 us
+Execution time [i=31]: 0 ms -> 18 us
+Execution time [i=32]: 0 ms -> 14 us
+Execution time [i=33]: 0 ms -> 15 us
+Execution time [i=34]: 0 ms -> 26 us
+Execution time [i=35]: 0 ms -> 14 us
+Execution time [i=36]: 0 ms -> 20 us
+Execution time [i=37]: 0 ms -> 21 us
+Execution time [i=38]: 0 ms -> 21 us
+Execution time [i=39]: 0 ms -> 13 us
+Execution time [i=40]: 0 ms -> 12 us
+Execution time [i=41]: 0 ms -> 18 us
+Execution time [i=42]: 0 ms -> 20 us
+Execution time [i=43]: 0 ms -> 16 us
+Execution time [i=44]: 0 ms -> 17 us
+Execution time [i=45]: 0 ms -> 17 us
+Execution time [i=46]: 0 ms -> 13 us
+Execution time [i=47]: 0 ms -> 21 us
+Execution time [i=48]: 0 ms -> 13 us
+Execution time [i=49]: 0 ms -> 17 us
+Execution time [i=50]: 0 ms -> 30 us
+Execution time [i=51]: 0 ms -> 27 us
+Execution time [i=52]: 0 ms -> 19 us
+Execution time [i=53]: 0 ms -> 17 us
+Execution time [i=54]: 0 ms -> 17 us
+Execution time [i=55]: 0 ms -> 13 us
+Execution time [i=56]: 0 ms -> 15 us
+Execution time [i=57]: 0 ms -> 16 us
+Execution time [i=58]: 0 ms -> 16 us
+Execution time [i=59]: 0 ms -> 20 us
+Execution time [i=60]: 0 ms -> 16 us
+Execution time [i=61]: 0 ms -> 14 us
+Execution time [i=62]: 0 ms -> 18 us
+Execution time [i=63]: 0 ms -> 16 us
+Execution time [i=64]: 0 ms -> 13 us
+Execution time [i=65]: 0 ms -> 13 us
+Execution time [i=66]: 0 ms -> 12 us
+Execution time [i=67]: 0 ms -> 12 us
+Execution time [i=68]: 0 ms -> 16 us
+Execution time [i=69]: 0 ms -> 14 us
+Execution time [i=70]: 0 ms -> 14 us
+Execution time [i=71]: 0 ms -> 13 us
+Execution time [i=72]: 0 ms -> 12 us
+Execution time [i=73]: 0 ms -> 13 us
+Execution time [i=74]: 0 ms -> 21 us
+Execution time [i=75]: 0 ms -> 17 us
+Execution time [i=76]: 0 ms -> 17 us
+Execution time [i=77]: 0 ms -> 16 us
+Execution time [i=78]: 0 ms -> 15 us
+Execution time [i=79]: 0 ms -> 15 us
+Execution time [i=80]: 0 ms -> 14 us
+Execution time [i=81]: 0 ms -> 17 us
+Execution time [i=82]: 0 ms -> 16 us
+Execution time [i=83]: 0 ms -> 23 us
+Execution time [i=84]: 0 ms -> 14 us
+Execution time [i=85]: 0 ms -> 14 us
+Execution time [i=86]: 0 ms -> 13 us
+Execution time [i=87]: 0 ms -> 13 us
+Execution time [i=88]: 0 ms -> 12 us
+Execution time [i=89]: 0 ms -> 12 us
+Execution time [i=90]: 0 ms -> 17 us
+Execution time [i=91]: 0 ms -> 27 us
+Execution time [i=92]: 0 ms -> 20 us
+Execution time [i=93]: 0 ms -> 25 us
+Execution time [i=94]: 0 ms -> 23 us
+Execution time [i=95]: 0 ms -> 14 us
+Execution time [i=96]: 0 ms -> 16 us
+Execution time [i=97]: 0 ms -> 25 us
+Execution time [i=98]: 0 ms -> 14 us
+Execution time [i=99]: 0 ms -> 25 us
+
+DNK2.txt [ACTACT,GGAGGA,GAGGCC,CTCTCT]:
+
+Restriction cut frequencies:
+[ACTACT]: 0.000244
+[GGAGGA]: 0.000244
+[GAGGCC]: 0.000244
+[CTCTCT]: 0.000244
+
+Multiset: 192,203,252,292,381,395,452,502,705,744,807,897,999,1059,1202,1251,1454,1501,1704,1793,1882,1956,2126,2174,2245,2378,2626,3185,3291,3377,3580,3672,4082,5173,5417,5465,5669,5798,5917,6050,6476,6668,6857,6871,7049,7252,7299,7373,7551,7591,7754,7843,8043,8295,8358,8550,8650,8753,8842,9045,9102,9255,9294,9497,9547,9999,
+
+Solution: 
+0,502,705,897,1704,1956,4082,7373,7754,9255,9547,9999,
+0,452,744,2245,2626,5917,8043,8295,9102,9294,9497,9999,
+Execution time [i=0]: 0 ms -> 28 us
+Execution time [i=1]: 0 ms -> 87 us
+Execution time [i=2]: 0 ms -> 26 us
+Execution time [i=3]: 0 ms -> 37 us
+Execution time [i=4]: 0 ms -> 31 us
+Execution time [i=5]: 0 ms -> 21 us
+Execution time [i=6]: 0 ms -> 20 us
+Execution time [i=7]: 0 ms -> 26 us
+Execution time [i=8]: 0 ms -> 23 us
+Execution time [i=9]: 0 ms -> 19 us
+Execution time [i=10]: 0 ms -> 21 us
+Execution time [i=11]: 0 ms -> 26 us
+Execution time [i=12]: 0 ms -> 36 us
+Execution time [i=13]: 0 ms -> 24 us
+Execution time [i=14]: 0 ms -> 21 us
+Execution time [i=15]: 0 ms -> 20 us
+Execution time [i=16]: 0 ms -> 19 us
+Execution time [i=17]: 0 ms -> 22 us
+Execution time [i=18]: 0 ms -> 27 us
+Execution time [i=19]: 0 ms -> 18 us
+Execution time [i=20]: 0 ms -> 25 us
+Execution time [i=21]: 0 ms -> 24 us
+Execution time [i=22]: 0 ms -> 30 us
+Execution time [i=23]: 0 ms -> 29 us
+Execution time [i=24]: 0 ms -> 32 us
+Execution time [i=25]: 0 ms -> 24 us
+Execution time [i=26]: 0 ms -> 23 us
+Execution time [i=27]: 0 ms -> 20 us
+Execution time [i=28]: 0 ms -> 21 us
+Execution time [i=29]: 0 ms -> 25 us
+Execution time [i=30]: 0 ms -> 28 us
+Execution time [i=31]: 0 ms -> 27 us
+Execution time [i=32]: 0 ms -> 19 us
+Execution time [i=33]: 0 ms -> 21 us
+Execution time [i=34]: 0 ms -> 21 us
+Execution time [i=35]: 0 ms -> 25 us
+Execution time [i=36]: 0 ms -> 20 us
+Execution time [i=37]: 0 ms -> 19 us
+Execution time [i=38]: 0 ms -> 18 us
+Execution time [i=39]: 0 ms -> 27 us
+Execution time [i=40]: 0 ms -> 20 us
+Execution time [i=41]: 0 ms -> 18 us
+Execution time [i=42]: 0 ms -> 18 us
+Execution time [i=43]: 0 ms -> 19 us
+Execution time [i=44]: 0 ms -> 21 us
+Execution time [i=45]: 0 ms -> 20 us
+Execution time [i=46]: 0 ms -> 24 us
+Execution time [i=47]: 0 ms -> 23 us
+Execution time [i=48]: 0 ms -> 30 us
+Execution time [i=49]: 0 ms -> 25 us
+Execution time [i=50]: 0 ms -> 23 us
+Execution time [i=51]: 0 ms -> 22 us
+Execution time [i=52]: 0 ms -> 21 us
+Execution time [i=53]: 0 ms -> 20 us
+Execution time [i=54]: 0 ms -> 19 us
+Execution time [i=55]: 0 ms -> 35 us
+Execution time [i=56]: 0 ms -> 31 us
+Execution time [i=57]: 0 ms -> 23 us
+Execution time [i=58]: 0 ms -> 22 us
+Execution time [i=59]: 0 ms -> 21 us
+Execution time [i=60]: 0 ms -> 19 us
+Execution time [i=61]: 0 ms -> 22 us
+Execution time [i=62]: 0 ms -> 21 us
+Execution time [i=63]: 0 ms -> 21 us
+Execution time [i=64]: 0 ms -> 17 us
+Execution time [i=65]: 0 ms -> 19 us
+Execution time [i=66]: 0 ms -> 21 us
+Execution time [i=67]: 0 ms -> 22 us
+Execution time [i=68]: 0 ms -> 21 us
+Execution time [i=69]: 0 ms -> 19 us
+Execution time [i=70]: 0 ms -> 19 us
+Execution time [i=71]: 0 ms -> 26 us
+Execution time [i=72]: 0 ms -> 21 us
+Execution time [i=73]: 0 ms -> 20 us
+Execution time [i=74]: 0 ms -> 24 us
+Execution time [i=75]: 0 ms -> 18 us
+Execution time [i=76]: 0 ms -> 26 us
+Execution time [i=77]: 0 ms -> 21 us
+Execution time [i=78]: 0 ms -> 21 us
+Execution time [i=79]: 0 ms -> 25 us
+Execution time [i=80]: 0 ms -> 28 us
+Execution time [i=81]: 0 ms -> 21 us
+Execution time [i=82]: 0 ms -> 22 us
+Execution time [i=83]: 0 ms -> 19 us
+Execution time [i=84]: 0 ms -> 21 us
+Execution time [i=85]: 0 ms -> 20 us
+Execution time [i=86]: 0 ms -> 18 us
+Execution time [i=87]: 0 ms -> 23 us
+Execution time [i=88]: 0 ms -> 18 us
+Execution time [i=89]: 0 ms -> 17 us
+Execution time [i=90]: 0 ms -> 18 us
+Execution time [i=91]: 0 ms -> 20 us
+Execution time [i=92]: 0 ms -> 20 us
+Execution time [i=93]: 0 ms -> 21 us
+Execution time [i=94]: 0 ms -> 22 us
+Execution time [i=95]: 0 ms -> 30 us
+Execution time [i=96]: 0 ms -> 22 us
+Execution time [i=97]: 0 ms -> 26 us
+Execution time [i=98]: 0 ms -> 22 us
+Execution time [i=99]: 0 ms -> 26 us
+
+DNK3.txt [TTTTTTT,GTGTCGT,ACACACA]:
+
+Restriction cut frequencies:
+[TTTTTTT]: 0.000061
+[GTGTCGT]: 0.000061
+[ACACACA]: 0.000061
+
+Multiset: 1,1,28,548,549,807,835,1305,2112,2140,3758,3759,4307,5074,5467,5758,6772,7579,7607,9516,9517,10065,11225,12530,13337,13365,14983,14984,15532,16288,16289,16837,17017,17018,17095,17096,17123,17124,17565,17566,17566,17567,17644,17672,18618,18619,21324,21325,23692,23693,27082,27083,32549,32550,33854,33855,34661,34662,34689,34690,35636,36184,36185,39943,40710,41258,41259,41617,41645,42452,43757,45017,45701,49224,50775,51168,52473,53280,53308,54982,56242,57547,58354,58382,58740,58741,59289,76306,76307,94925,99999,
+
+Solution: 
+0,41617,41645,42452,43757,49224,54982,58740,58741,59289,76306,76307,94925,99999,
+0,5074,23692,23693,40710,41258,41259,45017,50775,56242,57547,58354,58382,99999,
+Execution time [i=0]: 0 ms -> 56 us
+Execution time [i=1]: 0 ms -> 34 us
+Execution time [i=2]: 0 ms -> 33 us
+Execution time [i=3]: 0 ms -> 35 us
+Execution time [i=4]: 0 ms -> 35 us
+Execution time [i=5]: 0 ms -> 35 us
+Execution time [i=6]: 0 ms -> 33 us
+Execution time [i=7]: 0 ms -> 33 us
+Execution time [i=8]: 0 ms -> 35 us
+Execution time [i=9]: 0 ms -> 32 us
+Execution time [i=10]: 0 ms -> 33 us
+Execution time [i=11]: 0 ms -> 31 us
+Execution time [i=12]: 0 ms -> 33 us
+Execution time [i=13]: 0 ms -> 32 us
+Execution time [i=14]: 0 ms -> 34 us
+Execution time [i=15]: 0 ms -> 34 us
+Execution time [i=16]: 0 ms -> 34 us
+Execution time [i=17]: 0 ms -> 36 us
+Execution time [i=18]: 0 ms -> 34 us
+Execution time [i=19]: 0 ms -> 32 us
+Execution time [i=20]: 0 ms -> 31 us
+Execution time [i=21]: 0 ms -> 41 us
+Execution time [i=22]: 0 ms -> 38 us
+Execution time [i=23]: 0 ms -> 36 us
+Execution time [i=24]: 0 ms -> 34 us
+Execution time [i=25]: 0 ms -> 35 us
+Execution time [i=26]: 0 ms -> 41 us
+Execution time [i=27]: 0 ms -> 32 us
+Execution time [i=28]: 0 ms -> 33 us
+Execution time [i=29]: 0 ms -> 45 us
+Execution time [i=30]: 0 ms -> 41 us
+Execution time [i=31]: 0 ms -> 36 us
+Execution time [i=32]: 0 ms -> 36 us
+Execution time [i=33]: 0 ms -> 66 us
+Execution time [i=34]: 0 ms -> 31 us
+Execution time [i=35]: 0 ms -> 54 us
+Execution time [i=36]: 0 ms -> 39 us
+Execution time [i=37]: 0 ms -> 52 us
+Execution time [i=38]: 0 ms -> 36 us
+Execution time [i=39]: 0 ms -> 35 us
+Execution time [i=40]: 0 ms -> 32 us
+Execution time [i=41]: 0 ms -> 32 us
+Execution time [i=42]: 0 ms -> 30 us
+Execution time [i=43]: 0 ms -> 59 us
+Execution time [i=44]: 0 ms -> 34 us
+Execution time [i=45]: 0 ms -> 39 us
+Execution time [i=46]: 0 ms -> 32 us
+Execution time [i=47]: 0 ms -> 32 us
+Execution time [i=48]: 0 ms -> 32 us
+Execution time [i=49]: 0 ms -> 31 us
+Execution time [i=50]: 0 ms -> 46 us
+Execution time [i=51]: 0 ms -> 33 us
+Execution time [i=52]: 0 ms -> 34 us
+Execution time [i=53]: 0 ms -> 34 us
+Execution time [i=54]: 0 ms -> 35 us
+Execution time [i=55]: 0 ms -> 33 us
+Execution time [i=56]: 0 ms -> 39 us
+Execution time [i=57]: 0 ms -> 41 us
+Execution time [i=58]: 0 ms -> 34 us
+Execution time [i=59]: 0 ms -> 31 us
+Execution time [i=60]: 0 ms -> 32 us
+Execution time [i=61]: 0 ms -> 31 us
+Execution time [i=62]: 0 ms -> 30 us
+Execution time [i=63]: 0 ms -> 28 us
+Execution time [i=64]: 0 ms -> 28 us
+Execution time [i=65]: 0 ms -> 28 us
+Execution time [i=66]: 0 ms -> 28 us
+Execution time [i=67]: 0 ms -> 30 us
+Execution time [i=68]: 0 ms -> 32 us
+Execution time [i=69]: 0 ms -> 31 us
+Execution time [i=70]: 0 ms -> 29 us
+Execution time [i=71]: 0 ms -> 29 us
+Execution time [i=72]: 0 ms -> 28 us
+Execution time [i=73]: 0 ms -> 29 us
+Execution time [i=74]: 0 ms -> 29 us
+Execution time [i=75]: 0 ms -> 28 us
+Execution time [i=76]: 0 ms -> 26 us
+Execution time [i=77]: 0 ms -> 25 us
+Execution time [i=78]: 0 ms -> 25 us
+Execution time [i=79]: 0 ms -> 25 us
+Execution time [i=80]: 0 ms -> 26 us
+Execution time [i=81]: 0 ms -> 26 us
+Execution time [i=82]: 0 ms -> 26 us
+Execution time [i=83]: 0 ms -> 26 us
+Execution time [i=84]: 0 ms -> 25 us
+Execution time [i=85]: 0 ms -> 36 us
+Execution time [i=86]: 0 ms -> 29 us
+Execution time [i=87]: 0 ms -> 28 us
+Execution time [i=88]: 0 ms -> 27 us
+Execution time [i=89]: 0 ms -> 28 us
+Execution time [i=90]: 0 ms -> 28 us
+Execution time [i=91]: 0 ms -> 27 us
+Execution time [i=92]: 0 ms -> 26 us
+Execution time [i=93]: 0 ms -> 26 us
+Execution time [i=94]: 0 ms -> 36 us
+Execution time [i=95]: 0 ms -> 32 us
+Execution time [i=96]: 0 ms -> 31 us
+Execution time [i=97]: 0 ms -> 27 us
+Execution time [i=98]: 0 ms -> 28 us
+Execution time [i=99]: 0 ms -> 29 us
+

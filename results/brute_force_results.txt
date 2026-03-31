@@ -1,0 +1,339 @@
+BRUTE FORCE
+
+DNK1.txt [GTGTG]:
+
+Restriction cut frequencies:
+[GTGTG]: 0.000977
+
+Multiset: 168,831,999,
+
+Solution: 
+0,168,999,
+0,831,999,
+Execution time [i=0]: 0 ms -> 292 us
+Execution time [i=1]: 0 ms -> 14 us
+Execution time [i=2]: 0 ms -> 3 us
+Execution time [i=3]: 0 ms -> 3 us
+Execution time [i=4]: 0 ms -> 3 us
+Execution time [i=5]: 0 ms -> 3 us
+Execution time [i=6]: 0 ms -> 3 us
+Execution time [i=7]: 0 ms -> 3 us
+Execution time [i=8]: 0 ms -> 1 us
+Execution time [i=9]: 0 ms -> 2 us
+Execution time [i=10]: 0 ms -> 2 us
+Execution time [i=11]: 0 ms -> 3 us
+Execution time [i=12]: 0 ms -> 2 us
+Execution time [i=13]: 0 ms -> 2 us
+Execution time [i=14]: 0 ms -> 2 us
+Execution time [i=15]: 0 ms -> 2 us
+Execution time [i=16]: 0 ms -> 2 us
+Execution time [i=17]: 0 ms -> 2 us
+Execution time [i=18]: 0 ms -> 1 us
+Execution time [i=19]: 0 ms -> 2 us
+Execution time [i=20]: 0 ms -> 2 us
+Execution time [i=21]: 0 ms -> 1 us
+Execution time [i=22]: 0 ms -> 1 us
+Execution time [i=23]: 0 ms -> 2 us
+Execution time [i=24]: 0 ms -> 2 us
+Execution time [i=25]: 0 ms -> 2 us
+Execution time [i=26]: 0 ms -> 2 us
+Execution time [i=27]: 0 ms -> 2 us
+Execution time [i=28]: 0 ms -> 1 us
+Execution time [i=29]: 0 ms -> 2 us
+Execution time [i=30]: 0 ms -> 2 us
+Execution time [i=31]: 0 ms -> 1 us
+Execution time [i=32]: 0 ms -> 2 us
+Execution time [i=33]: 0 ms -> 2 us
+Execution time [i=34]: 0 ms -> 1 us
+Execution time [i=35]: 0 ms -> 1 us
+Execution time [i=36]: 0 ms -> 2 us
+Execution time [i=37]: 0 ms -> 2 us
+Execution time [i=38]: 0 ms -> 1 us
+Execution time [i=39]: 0 ms -> 1 us
+Execution time [i=40]: 0 ms -> 1 us
+Execution time [i=41]: 0 ms -> 1 us
+Execution time [i=42]: 0 ms -> 2 us
+Execution time [i=43]: 0 ms -> 2 us
+Execution time [i=44]: 0 ms -> 1 us
+Execution time [i=45]: 0 ms -> 1 us
+Execution time [i=46]: 0 ms -> 1 us
+Execution time [i=47]: 0 ms -> 2 us
+Execution time [i=48]: 0 ms -> 1 us
+Execution time [i=49]: 0 ms -> 1 us
+Execution time [i=50]: 0 ms -> 2 us
+Execution time [i=51]: 0 ms -> 1 us
+Execution time [i=52]: 0 ms -> 1 us
+Execution time [i=53]: 0 ms -> 2 us
+Execution time [i=54]: 0 ms -> 1 us
+Execution time [i=55]: 0 ms -> 1 us
+Execution time [i=56]: 0 ms -> 2 us
+Execution time [i=57]: 0 ms -> 1 us
+Execution time [i=58]: 0 ms -> 1 us
+Execution time [i=59]: 0 ms -> 2 us
+Execution time [i=60]: 0 ms -> 1 us
+Execution time [i=61]: 0 ms -> 1 us
+Execution time [i=62]: 0 ms -> 1 us
+Execution time [i=63]: 0 ms -> 1 us
+Execution time [i=64]: 0 ms -> 2 us
+Execution time [i=65]: 0 ms -> 1 us
+Execution time [i=66]: 0 ms -> 1 us
+Execution time [i=67]: 0 ms -> 1 us
+Execution time [i=68]: 0 ms -> 2 us
+Execution time [i=69]: 0 ms -> 2 us
+Execution time [i=70]: 0 ms -> 1 us
+Execution time [i=71]: 0 ms -> 1 us
+Execution time [i=72]: 0 ms -> 2 us
+Execution time [i=73]: 0 ms -> 2 us
+Execution time [i=74]: 0 ms -> 1 us
+Execution time [i=75]: 0 ms -> 1 us
+Execution time [i=76]: 0 ms -> 2 us
+Execution time [i=77]: 0 ms -> 1 us
+Execution time [i=78]: 0 ms -> 2 us
+Execution time [i=79]: 0 ms -> 2 us
+Execution time [i=80]: 0 ms -> 2 us
+Execution time [i=81]: 0 ms -> 1 us
+Execution time [i=82]: 0 ms -> 1 us
+Execution time [i=83]: 0 ms -> 1 us
+Execution time [i=84]: 0 ms -> 2 us
+Execution time [i=85]: 0 ms -> 1 us
+Execution time [i=86]: 0 ms -> 1 us
+Execution time [i=87]: 0 ms -> 1 us
+Execution time [i=88]: 0 ms -> 1 us
+Execution time [i=89]: 0 ms -> 1 us
+Execution time [i=90]: 0 ms -> 1 us
+Execution time [i=91]: 0 ms -> 1 us
+Execution time [i=92]: 0 ms -> 1 us
+Execution time [i=93]: 0 ms -> 1 us
+Execution time [i=94]: 0 ms -> 1 us
+Execution time [i=95]: 0 ms -> 2 us
+Execution time [i=96]: 0 ms -> 4 us
+Execution time [i=97]: 0 ms -> 1 us
+Execution time [i=98]: 0 ms -> 1 us
+Execution time [i=99]: 0 ms -> 2 us
+
+DNK1.txt [TTCC,CTCTCT]:
+
+Restriction cut frequencies:
+[TTCC]: 0.003906
+[CTCTCT]: 0.000244
+
+Multiset: 15,47,66,73,73,88,103,113,118,139,150,165,186,189,191,216,231,238,289,304,304,377,433,506,572,619,622,695,722,737,761,808,810,911,926,999,
+
+Solution: 
+0,73,88,191,238,304,377,810,999,
+0,189,622,695,761,808,911,926,999,
+Execution time [i=0]: 6416 ms -> 6416495 us
+Execution time [i=1]: 6405 ms -> 6405121 us
+Execution time [i=2]: 6389 ms -> 6389443 us
+Execution time [i=3]: 6502 ms -> 6502685 us
+Execution time [i=4]: 6381 ms -> 6381228 us
+Execution time [i=5]: 6407 ms -> 6407574 us
+Execution time [i=6]: 6414 ms -> 6414452 us
+Execution time [i=7]: 6431 ms -> 6431213 us
+Execution time [i=8]: 6370 ms -> 6370129 us
+Execution time [i=9]: 6364 ms -> 6364149 us
+Execution time [i=10]: 6365 ms -> 6365261 us
+Execution time [i=11]: 6413 ms -> 6413763 us
+Execution time [i=12]: 6544 ms -> 6544793 us
+Execution time [i=13]: 6562 ms -> 6562325 us
+Execution time [i=14]: 6425 ms -> 6425647 us
+Execution time [i=15]: 7867 ms -> 7867305 us
+Execution time [i=16]: 7148 ms -> 7148513 us
+Execution time [i=17]: 6601 ms -> 6601363 us
+Execution time [i=18]: 6564 ms -> 6564240 us
+Execution time [i=19]: 6507 ms -> 6507246 us
+Execution time [i=20]: 6606 ms -> 6606133 us
+Execution time [i=21]: 7693 ms -> 7693033 us
+Execution time [i=22]: 8368 ms -> 8368586 us
+Execution time [i=23]: 7519 ms -> 7519392 us
+Execution time [i=24]: 7056 ms -> 7056677 us
+Execution time [i=25]: 6563 ms -> 6563966 us
+Execution time [i=26]: 7121 ms -> 7121806 us
+Execution time [i=27]: 6672 ms -> 6672144 us
+Execution time [i=28]: 7931 ms -> 7931955 us
+Execution time [i=29]: 7281 ms -> 7281735 us
+Execution time [i=30]: 11697 ms -> 11697187 us
+Execution time [i=31]: 8633 ms -> 8633739 us
+Execution time [i=32]: 6701 ms -> 6701888 us
+Execution time [i=33]: 7086 ms -> 7086691 us
+Execution time [i=34]: 7675 ms -> 7675098 us
+Execution time [i=35]: 7151 ms -> 7151917 us
+Execution time [i=36]: 6821 ms -> 6821652 us
+Execution time [i=37]: 7170 ms -> 7170989 us
+Execution time [i=38]: 6736 ms -> 6736778 us
+Execution time [i=39]: 6569 ms -> 6569666 us
+Execution time [i=40]: 6528 ms -> 6528645 us
+Execution time [i=41]: 6545 ms -> 6545532 us
+Execution time [i=42]: 7384 ms -> 7384201 us
+Execution time [i=43]: 6499 ms -> 6499477 us
+Execution time [i=44]: 7049 ms -> 7049924 us
+Execution time [i=45]: 6628 ms -> 6628939 us
+Execution time [i=46]: 7591 ms -> 7591679 us
+Execution time [i=47]: 7118 ms -> 7118776 us
+Execution time [i=48]: 7087 ms -> 7087882 us
+Execution time [i=49]: 7018 ms -> 7018004 us
+Execution time [i=50]: 7205 ms -> 7205738 us
+Execution time [i=51]: 7431 ms -> 7431447 us
+Execution time [i=52]: 7454 ms -> 7454677 us
+Execution time [i=53]: 6853 ms -> 6853641 us
+Execution time [i=54]: 7405 ms -> 7405613 us
+Execution time [i=55]: 6992 ms -> 6992555 us
+Execution time [i=56]: 6652 ms -> 6652439 us
+Execution time [i=57]: 6583 ms -> 6583585 us
+Execution time [i=58]: 6587 ms -> 6587906 us
+Execution time [i=59]: 6982 ms -> 6982863 us
+Execution time [i=60]: 6734 ms -> 6734253 us
+Execution time [i=61]: 6610 ms -> 6610770 us
+Execution time [i=62]: 6478 ms -> 6478968 us
+Execution time [i=63]: 7174 ms -> 7174712 us
+Execution time [i=64]: 6676 ms -> 6676480 us
+Execution time [i=65]: 6516 ms -> 6516864 us
+Execution time [i=66]: 6917 ms -> 6917981 us
+Execution time [i=67]: 6543 ms -> 6543411 us
+Execution time [i=68]: 6952 ms -> 6952285 us
+Execution time [i=69]: 6583 ms -> 6583864 us
+Execution time [i=70]: 6539 ms -> 6539464 us
+Execution time [i=71]: 6549 ms -> 6549495 us
+Execution time [i=72]: 7037 ms -> 7037517 us
+Execution time [i=73]: 6646 ms -> 6646226 us
+Execution time [i=74]: 6488 ms -> 6488354 us
+Execution time [i=75]: 6521 ms -> 6521144 us
+Execution time [i=76]: 6526 ms -> 6526708 us
+Execution time [i=77]: 6824 ms -> 6824274 us
+Execution time [i=78]: 7005 ms -> 7005244 us
+Execution time [i=79]: 7092 ms -> 7092439 us
+Execution time [i=80]: 6479 ms -> 6479527 us
+Execution time [i=81]: 7099 ms -> 7099415 us
+Execution time [i=82]: 6583 ms -> 6583978 us
+Execution time [i=83]: 6473 ms -> 6473873 us
+Execution time [i=84]: 6516 ms -> 6516766 us
+Execution time [i=85]: 6543 ms -> 6543254 us
+Execution time [i=86]: 6828 ms -> 6828743 us
+Execution time [i=87]: 6555 ms -> 6555388 us
+Execution time [i=88]: 6499 ms -> 6499418 us
+Execution time [i=89]: 6481 ms -> 6481681 us
+Execution time [i=90]: 6884 ms -> 6884256 us
+Execution time [i=91]: 6512 ms -> 6512266 us
+Execution time [i=92]: 6539 ms -> 6539549 us
+Execution time [i=93]: 6510 ms -> 6510453 us
+Execution time [i=94]: 6436 ms -> 6436508 us
+Execution time [i=95]: 6876 ms -> 6876312 us
+Execution time [i=96]: 6566 ms -> 6566301 us
+Execution time [i=97]: 6462 ms -> 6462629 us
+Execution time [i=98]: 6509 ms -> 6509594 us
+Execution time [i=99]: 7312 ms -> 7312810 us
+
+DNK1.txt [AAAA,CCCC,TTTT,GGGG]:
+
+Restriction cut frequencies:
+[AAAA]: 0.003906
+[CCCC]: 0.003906
+[TTTT]: 0.003906
+[GGGG]: 0.003906
+
+Multiset: 1,1,47,49,50,73,74,105,119,120,120,121,153,193,200,202,203,240,249,250,273,274,322,323,323,324,393,442,443,451,452,501,556,557,606,654,701,759,774,775,806,879,880,894,999,
+
+Solution: 
+0,105,556,557,606,759,806,879,880,999,
+0,119,120,193,240,393,442,443,894,999,
+Execution time [i=0]: 232490 ms -> 232490264 us
+Execution time [i=1]: 245363 ms -> 245363761 us
+Execution time [i=2]: 205943 ms -> 205943161 us
+Execution time [i=3]: 217641 ms -> 217641676 us
+Execution time [i=4]: 221061 ms -> 221061536 us
+Execution time [i=5]: 227983 ms -> 227983179 us
+Execution time [i=6]: 220090 ms -> 220090193 us
+Execution time [i=7]: 226598 ms -> 226598823 us
+Execution time [i=8]: 222255 ms -> 222255010 us
+Execution time [i=9]: 202983 ms -> 202983051 us
+Execution time [i=10]: 196580 ms -> 196580363 us
+Execution time [i=11]: 198144 ms -> 198144957 us
+Execution time [i=12]: 195467 ms -> 195467748 us
+Execution time [i=13]: 192811 ms -> 192811098 us
+Execution time [i=14]: 188868 ms -> 188868206 us
+Execution time [i=15]: 214756 ms -> 214756731 us
+Execution time [i=16]: 387457 ms -> 387457195 us
+Execution time [i=17]: 390495 ms -> 390495365 us
+Execution time [i=18]: 385569 ms -> 385569850 us
+Execution time [i=19]: 383674 ms -> 383674630 us
+Execution time [i=20]: 383141 ms -> 383141572 us
+Execution time [i=21]: 383385 ms -> 383385455 us
+Execution time [i=22]: 383236 ms -> 383236946 us
+Execution time [i=23]: 386403 ms -> 386403721 us
+Execution time [i=24]: 383860 ms -> 383860116 us
+Execution time [i=25]: 384075 ms -> 384075052 us
+Execution time [i=26]: 383250 ms -> 383250884 us
+Execution time [i=27]: 383568 ms -> 383568947 us
+Execution time [i=28]: 383401 ms -> 383401876 us
+Execution time [i=29]: 383178 ms -> 383178345 us
+Execution time [i=30]: 383091 ms -> 383091484 us
+Execution time [i=31]: 383418 ms -> 383418149 us
+Execution time [i=32]: 383507 ms -> 383507391 us
+Execution time [i=33]: 383274 ms -> 383274135 us
+Execution time [i=34]: 383265 ms -> 383265064 us
+Execution time [i=35]: 383119 ms -> 383119740 us
+Execution time [i=36]: 383610 ms -> 383610803 us
+Execution time [i=37]: 383184 ms -> 383184289 us
+Execution time [i=38]: 383286 ms -> 383286249 us
+Execution time [i=39]: 383111 ms -> 383111922 us
+Execution time [i=40]: 383672 ms -> 383672112 us
+Execution time [i=41]: 383145 ms -> 383145437 us
+Execution time [i=42]: 383116 ms -> 383116461 us
+Execution time [i=43]: 383247 ms -> 383247447 us
+Execution time [i=44]: 383155 ms -> 383155411 us
+Execution time [i=45]: 383219 ms -> 383219328 us
+Execution time [i=46]: 383396 ms -> 383396714 us
+Execution time [i=47]: 383071 ms -> 383071894 us
+Execution time [i=48]: 383689 ms -> 383689117 us
+Execution time [i=49]: 383233 ms -> 383233468 us
+Execution time [i=50]: 383656 ms -> 383656662 us
+Execution time [i=51]: 384149 ms -> 384149246 us
+Execution time [i=52]: 384129 ms -> 384129224 us
+Execution time [i=53]: 383095 ms -> 383095039 us
+Execution time [i=54]: 383589 ms -> 383589693 us
+Execution time [i=55]: 383534 ms -> 383534720 us
+Execution time [i=56]: 383563 ms -> 383563130 us
+Execution time [i=57]: 384041 ms -> 384041647 us
+Execution time [i=58]: 383376 ms -> 383376031 us
+Execution time [i=59]: 383614 ms -> 383614503 us
+Execution time [i=60]: 383403 ms -> 383403754 us
+Execution time [i=61]: 383425 ms -> 383425748 us
+Execution time [i=62]: 383744 ms -> 383744762 us
+Execution time [i=63]: 383716 ms -> 383716347 us
+Execution time [i=64]: 383662 ms -> 383662955 us
+Execution time [i=65]: 383323 ms -> 383323939 us
+Execution time [i=66]: 383815 ms -> 383815322 us
+Execution time [i=67]: 383090 ms -> 383090581 us
+Execution time [i=68]: 383508 ms -> 383508966 us
+Execution time [i=69]: 383206 ms -> 383206387 us
+Execution time [i=70]: 383484 ms -> 383484117 us
+Execution time [i=71]: 383904 ms -> 383904321 us
+Execution time [i=72]: 384252 ms -> 384252724 us
+Execution time [i=73]: 384655 ms -> 384655349 us
+Execution time [i=74]: 383937 ms -> 383937922 us
+Execution time [i=75]: 383742 ms -> 383742018 us
+Execution time [i=76]: 384420 ms -> 384420423 us
+Execution time [i=77]: 383755 ms -> 383755907 us
+Execution time [i=78]: 384091 ms -> 384091283 us
+Execution time [i=79]: 383777 ms -> 383777881 us
+Execution time [i=80]: 383680 ms -> 383680547 us
+Execution time [i=81]: 384226 ms -> 384226196 us
+Execution time [i=82]: 384337 ms -> 384337948 us
+Execution time [i=83]: 384235 ms -> 384235580 us
+Execution time [i=84]: 383933 ms -> 383933023 us
+Execution time [i=85]: 384057 ms -> 384057875 us
+Execution time [i=86]: 384157 ms -> 384157262 us
+Execution time [i=87]: 384354 ms -> 384354348 us
+Execution time [i=88]: 384187 ms -> 384187638 us
+Execution time [i=89]: 383902 ms -> 383902796 us
+Execution time [i=90]: 384520 ms -> 384520468 us
+Execution time [i=91]: 384120 ms -> 384120024 us
+Execution time [i=92]: 384715 ms -> 384715823 us
+Execution time [i=93]: 384014 ms -> 384014410 us
+Execution time [i=94]: 384351 ms -> 384351210 us
+Execution time [i=95]: 383263 ms -> 383263459 us
+Execution time [i=96]: 383694 ms -> 383694658 us
+Execution time [i=97]: 384540 ms -> 384540888 us
+Execution time [i=98]: 383991 ms -> 383991368 us
+Execution time [i=99]: 384704 ms -> 384704310 us
+

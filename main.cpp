@@ -24,7 +24,8 @@ int main(const int argc, char** argv) {
 
     const std::string filePath = argv[2];
     const std::string restrictions = argv[3];
-    RestrictionCarting::solveProblem(filePath, restrictions, modeFlag);
+    std::ofstream outputFile;
+    RestrictionCarting::solveProblem(filePath, restrictions, modeFlag, outputFile, true);
 
     return 0;
 }

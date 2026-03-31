@@ -10,8 +10,7 @@
 
 class Util {
 public:
-    static std::vector<size_t> findRestrictionIndexes(const std::string& restrictionStrings,
-                                                      const std::string& dnaString);
+    static std::vector<size_t> findRestrictionIndexes(const std::vector<std::string>& restrictions, const std::string &dnaString);
 
     static std::vector<size_t> getDistances(const std::vector<size_t> &restrictionIndexes);
 
@@ -32,7 +31,11 @@ public:
 
     static void deleteDistances(std::vector<size_t> &distances, const size_t &distanceToDelete);
 
+    static void output(std::ostream &file, const std::string &msg, bool print);
+
     static std::vector<std::vector<size_t>> getAllCombinations(const std::vector<unsigned long long> & vector, size_t size);
+
+    static std::vector<std::string> splitRestrictions(const std::string &filePath);
 };
 
 

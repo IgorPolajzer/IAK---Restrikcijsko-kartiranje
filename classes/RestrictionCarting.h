@@ -17,7 +17,8 @@ public:
 
     static std::vector<std::vector<size_t>> partialDigest(std::vector<size_t> &L);
 
-    static void solveProblem(const std::string &filePath, const std::string &restrictions, const std::string &algorithm);
+    static void solveProblem(const std::string &problemFilePath, const std::string &restrictionsString, const std::string &algorithm, std::ofstream
+                             &outputFile, int i);
 
     static void test(const std::string &algorithm);
 };

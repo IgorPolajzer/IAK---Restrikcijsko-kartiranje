@@ -38,11 +38,8 @@ std::vector<std::vector<size_t>> Util::getAllCombinations(const std::vector<size
     return results;
 }
 
-std::vector<size_t> Util::findRestrictionIndexes(const std::string& restrictionStrings,
-    const std::string& dnaString) {
+std::vector<std::string> Util::splitRestrictions(const std::string &restrictionStrings) {
     std::vector<std::string> restrictions;
-    std::vector<std::vector<size_t>> indexes;
-    std::vector<size_t> indexUnion;
 
     // Split CSV into strings.
     std::stringstream ss(restrictionStrings);
@@ -51,6 +48,14 @@ std::vector<size_t> Util::findRestrictionIndexes(const std::string& restrictionS
         getline(ss, substr, ',');
         restrictions.push_back(substr);
     }
+
+    return restrictions;
+}
+
+std::vector<size_t> Util::findRestrictionIndexes(const std::vector<std::string>& restrictions,
+    const std::string& dnaString) {
+    std::vector<std::vector<size_t>> indexes;
+    std::vector<size_t> indexUnion;
 
     // Find indexes for restriction strings.
     for (auto& restriction : restrictions) {
@@ -160,5 +165,12 @@ void Util::deleteDistances(std::vector<size_t>& distances, const size_t& distanc
     for (unsigned long long & i : distances) {
         auto distance = static_cast<long long>(i - distanceToDelete);
         i = std::abs(distance);
+    }
+}
+
+void Util::output(std::ostream& file, const std::string& msg, bool print) {
+    if (print) {
+        std::cout << msg;
+        if (file) file << msg;
     }
 }

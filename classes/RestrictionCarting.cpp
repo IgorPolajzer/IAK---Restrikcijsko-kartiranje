@@ -5,29 +5,42 @@
 #include <iostream>
 #include <ranges>
 #include <set>
+#include <cmath>
+#include <numeric>
 
 #include "Util.h"
 
 
 std::vector<std::vector<size_t>> RestrictionCarting::bruteForce(std::vector<size_t> &L, const size_t n) {
     std::set<std::vector<size_t>> unique_results;
-    std::vector<std::vector<size_t>> result;
 
     if (!std::ranges::is_sorted(L)) std::ranges::sort(L);
     const std::vector<size_t> original_L = L;
 
-    std::vector<std::vector<size_t>> combinations = Util::getAllCombinations(L, n - 2);
+    const size_t m = L.size();
+    const size_t number_of_x = n - 2;
 
-    for (const auto& comb : combinations) {
-        std::vector X = { 0, L.back() };
-        X.insert(X.end(), comb.begin(), comb.end());
+    if (number_of_x > m) return {};
+
+    std::vector<size_t> combination(number_of_x);
+    std::iota(combination.begin(), combination.end(), 0);
+
+    while (true) {
+        std::vector X = {0, L.back()};
+        for (const size_t i : combination) X.push_back(L[i]);
+
         std::ranges::sort(X);
         std::vector<size_t> x_distance = Util::getDistances(X);
         std::ranges::sort(x_distance);
 
-        if (x_distance == original_L) {
-            unique_results.insert(X);
-        }
+        if (x_distance == original_L) unique_results.insert(X);
+
+        int i = static_cast<int>(number_of_x) - 1;
+        while (i >= 0 && combination[i] == m - number_of_x + i) i--;
+        if (i < 0) break;
+
+        combination[i]++;
+        for (size_t j = i + 1; j < number_of_x; j++) combination[j] = combination[j - 1] + 1;
     }
 
     return {unique_results.begin(), unique_results.end()};
@@ -83,15 +96,29 @@ std::vector<std::vector<size_t>> RestrictionCarting::partialDigest(std::vector<s
     return place(L, X, width);
 }
 
-void RestrictionCarting::solveProblem(const std::string& filePath, const std::string& restrictions, const std::string& algorithm) {
+void RestrictionCarting::solveProblem(const std::string& problemFilePath, const std::string& restrictionsString,
+    const std::string& algorithm, std::ofstream& outputFile, const int i) {
+    bool print = i == 0;
+
     // Construct multiset.
-    std::string fileString = Util::readFile(filePath);
-    std::vector<size_t> indexes = Util::findRestrictionIndexes(restrictions, fileString);
+    const std::string fileString = Util::readFile(problemFilePath);
+    const std::vector<std::string> restrictions = Util::splitRestrictions(restrictionsString);
+    const std::vector<size_t> indexes = Util::findRestrictionIndexes(restrictions, fileString);
     std::vector<size_t> L = Util::getDistances(indexes);
 
-    std::cout << "Multiset: ";
-    for (const auto& d : L) std::cout << d << ",";
-    std::cout << std::endl << std::endl;
+    // Calculate restriction cut frequencies.
+    Util::output(outputFile, "\nRestriction cut frequencies:\n", print);
+
+    for (const auto& restriction : restrictions) {
+        // number_of_nucleotide_bases -> A/C/G/T.
+        // 1 / (number_of_nucleotide_bases^length_of_the_restriction_cut)
+        double frequency = 1.0 / std::pow(4.0, restriction.length());
+        Util::output(outputFile, "[" + restriction + "]: " + std::to_string(frequency) + "\n", print);
+    }
+
+    Util::output(outputFile, "\nMultiset: ", print);
+    for (const auto& d : L) Util::output(outputFile, std::to_string(d)  + ",", print);
+    Util::output(outputFile, "\n\n", print);
 
     // Solve restriction carting problem.
     std::vector<std::vector<size_t>> solutions;
@@ -105,28 +132,36 @@ void RestrictionCarting::solveProblem(const std::string& filePath, const std::st
     }
     auto stop = std::chrono::high_resolution_clock::now();
 
-    std::cout << "Solution: ";
+    Util::output(outputFile, "Solution: ", print);
     if (!solutions.empty()) {
-        std::cout << std::endl;
+        Util::output(outputFile, "\n", print);
         for (const auto& solution: solutions) {
             for (const auto& x : solution) {
-                std::cout << x << ",";
+                Util::output(outputFile, std::to_string(x) + ",", print);
             }
-            std::cout << std::endl;
+            Util::output(outputFile, "\n", print);
         }
     } else {
-        std::cout << "No solution" << std::endl;
+        Util::output(outputFile, "No solution\n", print);
     }
 
-    auto msDuration = duration_cast<std::chrono::milliseconds>(stop - start);
-    auto microsDuration = duration_cast<std::chrono::microseconds>(stop - start);
-    std::cout << "Execution time: " << msDuration << " -> " << microsDuration << std::endl;
-    std::cout << std::endl << std::endl;
+    const auto msDuration = duration_cast<std::chrono::milliseconds>(stop - start);
+    const auto microsDuration = duration_cast<std::chrono::microseconds>(stop - start);
+    Util::output(
+        outputFile,
+        "Execution time [i=" + std::to_string(i) + "]: " +
+        std::to_string(msDuration.count()) + " ms -> " +
+        std::to_string(microsDuration.count()) + " us\n",
+        true
+    );
 }
 
 void RestrictionCarting::test(const std::string& algorithm) {
-    const std::string folder = "examples/";
-    const std::vector<std::pair<std::string, std::string>> tests = {
+    const std::string outputFolder = "results/";
+    const std::string inputFolder = "examples/";
+
+    std::vector<std::pair<std::string, std::string>> tests;
+    const std::vector<std::pair<std::string, std::string>> branchAndBoundTests = {
         { "DNK1.txt", "GTGTG" },
         { "DNK1.txt", "TTCC,CTCTCT" },
         { "DNK1.txt", "AAAA,CCCC,TTTT,GGGG" },
@@ -134,19 +169,34 @@ void RestrictionCarting::test(const std::string& algorithm) {
         { "DNK3.txt", "TTTTTTT,GTGTCGT,ACACACA" },
     };
 
+    const std::vector<std::pair<std::string, std::string>> bruteForceTests = {
+        { "DNK1.txt", "GTGTG" },
+        { "DNK1.txt", "TTCC,CTCTCT" },
+        { "DNK1.txt", "AAAA,CCCC,TTTT,GGGG" }
+    };
+
+
+    std::ofstream outputFile;
     if (algorithm == "-bf") {
-        std::cout << "BRUTE FORCE" << std::endl << std::endl;
+        tests = bruteForceTests;
+        outputFile = std::ofstream(outputFolder + "brute_force_results.txt");
+        Util::output(outputFile, "BRUTE FORCE\n\n", true);
     } else if (algorithm == "-pd") {
-        std::cout << "BRANCH AND BOUND" << std::endl << std::endl;
+        tests = branchAndBoundTests;
+        outputFile = std::ofstream(outputFolder + "branch_and_bound_results.txt");
+        Util::output(outputFile, "BRANCH AND BOUND\n\n", true);
     } else {
-        std::cout << "Algorithm not supported" << std::endl << std::endl;
+        Util::output(outputFile, "Algorithm not supported\n\n", true);
         return;
     }
 
-    for (const auto& [file, restrictions] : tests) {
-        std::cout << file << " [" << restrictions << "]:" << std::endl;
+    for (const auto& [problemFile, restrictions] : tests) {
+        Util::output(outputFile, problemFile + " [" + restrictions + "]:\n", true);
         try {
-            solveProblem(folder + file, restrictions, algorithm);
+            for (int i = 0; i < 100; i++) {
+                solveProblem(inputFolder + problemFile, restrictions, algorithm, outputFile, i);
+            }
+            Util::output(outputFile, "\n", true);
         } catch (const std::exception& e) {
             std::cerr << "Error: " << e.what() << std::endl;
         }
