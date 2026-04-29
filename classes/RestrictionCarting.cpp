@@ -57,7 +57,7 @@ std::vector<std::vector<size_t>> RestrictionCarting::place(std::vector<size_t> &
     if (!std::ranges::is_sorted(L)) std::ranges::sort(L);
     size_t y = L.back();
 
-    std::vector<size_t> distancesOne;
+    std::vector<unsigned long long> distancesOne;
     if (Util::isDistanceOfElementsInVector(y, X, L, distancesOne)) {
         Util::addAndSort(X, y);
         Util::removeElementsFromVector(L, distancesOne);
@@ -71,7 +71,7 @@ std::vector<std::vector<size_t>> RestrictionCarting::place(std::vector<size_t> &
         Util::addElementsToVector(L, distancesOne);
     }
 
-    std::vector<size_t> distancesTwo;
+    std::vector<unsigned long long> distancesTwo;
     size_t widthDifference = width - y;
     if (Util::isDistanceOfElementsInVector(widthDifference, X, L, distancesTwo)) {
         Util::addAndSort(X, widthDifference);

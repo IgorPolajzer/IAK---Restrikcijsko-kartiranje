@@ -23,13 +23,13 @@ public:
 
     static void addAndSort(std::vector<size_t> &vector, size_t &elementToAdd);
 
-    static void removeElementsFromVector(std::vector<size_t> &vector, const std::vector<size_t> &elementsToRemove);
+    static void removeElementsFromVector(std::vector<size_t> &vector, const std::vector<unsigned long long> &elementsToRemove);
 
-    static void removeElementFromVector(std::vector<size_t> &vector, size_t element);
+    static void removeElementFromVector(std::vector<size_t> &vector, unsigned long long element);
 
-    static void addElementsToVector(std::vector<size_t> &vector, const std::vector<size_t> &elementToAdd);
+    static void addElementsToVector(std::vector<size_t> &vector, const std::vector<unsigned long long> &elementToAdd);
 
-    static void deleteDistances(std::vector<size_t> &distances, const size_t &distanceToDelete);
+    static void deleteDistances(std::vector<unsigned long long> &distances, const size_t &distanceToDelete);
 
     static void output(std::ostream &file, const std::string &msg, bool print);
 

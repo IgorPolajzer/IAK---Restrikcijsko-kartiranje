@@ -12,7 +12,7 @@
 #include <ranges>
 #include <stdexcept>
 
-std::vector<std::vector<size_t>> Util::getAllCombinations(const std::vector<size_t> &v, const size_t r) {
+std::vector<std::vector<size_t>> Util::getAllCombinations(const std::vector<unsigned long long> &v, const size_t r) {
     std::vector<std::vector<size_t>> results;
     size_t n = v.size();
     if (r > n) return results;
@@ -142,7 +142,7 @@ void Util::addAndSort(std::vector<size_t>& vector, size_t& elementToAdd) {
     std::ranges::sort(vector.begin(), vector.end());
 }
 
-void Util::removeElementsFromVector(std::vector<size_t>& vector, const std::vector<size_t>& elementsToRemove) {
+void Util::removeElementsFromVector(std::vector<size_t>& vector, const std::vector<unsigned long long>& elementsToRemove) {
     for (const auto& element : elementsToRemove) {
         auto it = std::ranges::find(vector, element);
         if (it != vector.end()) {
@@ -151,17 +151,17 @@ void Util::removeElementsFromVector(std::vector<size_t>& vector, const std::vect
     }
 }
 
-void Util::removeElementFromVector(std::vector<size_t>& vector, size_t element) {
+void Util::removeElementFromVector(std::vector<size_t>& vector, unsigned long long element) {
     removeElementsFromVector(vector, std::vector(1, element));
 }
 
-void Util::addElementsToVector(std::vector<size_t>& vector, const std::vector<size_t>& elementToAdd) {
+void Util::addElementsToVector(std::vector<size_t>& vector, const std::vector<unsigned long long>& elementToAdd) {
     for (const auto& element : elementToAdd) {
         vector.push_back(element);
     }
 }
 
-void Util::deleteDistances(std::vector<size_t>& distances, const size_t& distanceToDelete) {
+void Util::deleteDistances(std::vector<unsigned long long>& distances, const size_t& distanceToDelete) {
     for (unsigned long long & i : distances) {
         auto distance = static_cast<long long>(i - distanceToDelete);
         i = std::abs(distance);
