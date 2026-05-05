@@ -106,16 +106,6 @@ void RestrictionCarting::solveProblem(const std::string& problemFilePath, const 
     const std::vector<size_t> indexes = Util::findRestrictionIndexes(restrictions, fileString);
     std::vector<size_t> L = Util::getDistances(indexes);
 
-    // Calculate restriction cut frequencies.
-    Util::output(outputFile, "\nRestriction cut frequencies:\n", print);
-
-    for (const auto& restriction : restrictions) {
-        // number_of_nucleotide_bases -> A/C/G/T.
-        // 1 / (number_of_nucleotide_bases^length_of_the_restriction_cut)
-        double frequency = 1.0 / std::pow(4.0, restriction.length());
-        Util::output(outputFile, "[" + restriction + "]: " + std::to_string(frequency) + "\n", print);
-    }
-
     Util::output(outputFile, "\nMultiset: ", print);
     for (const auto& d : L) Util::output(outputFile, std::to_string(d)  + ",", print);
     Util::output(outputFile, "\n\n", print);
@@ -124,9 +114,23 @@ void RestrictionCarting::solveProblem(const std::string& problemFilePath, const 
     std::vector<std::vector<size_t>> solutions;
     auto start = std::chrono::high_resolution_clock::now();
     if (algorithm == "-bf") {
-        solutions = bruteForce(L, indexes.size());
+        double discriminant = 1.0 + 8.0 * L.size();
+        const int n = static_cast<int>((1.0 + std::sqrt(discriminant)) / 2.0);
+        solutions = bruteForce(L, n);
     } else if (algorithm == "-pd") {
         solutions = partialDigest(L);
+    } else if (algorithm == "-f") {
+        // Calculate restriction cut frequencies.
+        Util::output(outputFile, "\nRestriction cut frequencies:\n", print);
+
+        const auto nucleotids = Util::getAllNucleotids(6);
+
+        for (const auto& nucleotid : nucleotids) {
+            int frequency = Util::countFreq(nucleotid, fileString);
+            Util::output(outputFile, "[" + nucleotid + "]: " + std::to_string(frequency) + "\n", print);
+        }
+
+        return;
     } else {
         return;
     }
@@ -161,7 +165,7 @@ void RestrictionCarting::test(const std::string& algorithm) {
     const std::string inputFolder = "examples/";
 
     std::vector<std::pair<std::string, std::string>> tests;
-    const std::vector<std::pair<std::string, std::string>> branchAndBoundTests = {
+    const std::vector<std::pair<std::string, std::string>> allTests = {
         { "DNK1.txt", "GTGTG" },
         { "DNK1.txt", "TTCC,CTCTCT" },
         { "DNK1.txt", "AAAA,CCCC,TTTT,GGGG" },
@@ -176,15 +180,21 @@ void RestrictionCarting::test(const std::string& algorithm) {
     };
 
 
+    int iterations = 100;
     std::ofstream outputFile;
     if (algorithm == "-bf") {
         tests = bruteForceTests;
         outputFile = std::ofstream(outputFolder + "brute_force_results.txt");
         Util::output(outputFile, "BRUTE FORCE\n\n", true);
     } else if (algorithm == "-pd") {
-        tests = branchAndBoundTests;
+        tests = allTests;
         outputFile = std::ofstream(outputFolder + "branch_and_bound_results.txt");
         Util::output(outputFile, "BRANCH AND BOUND\n\n", true);
+    } else if (algorithm == "-f") {
+        tests = allTests;
+        outputFile = std::ofstream(outputFolder + "frequencies.txt");
+        Util::output(outputFile, "NUCLEOTID FREQUENCIES\n\n", true);
+        iterations = 1;
     } else {
         Util::output(outputFile, "Algorithm not supported\n\n", true);
         return;
@@ -193,7 +203,7 @@ void RestrictionCarting::test(const std::string& algorithm) {
     for (const auto& [problemFile, restrictions] : tests) {
         Util::output(outputFile, problemFile + " [" + restrictions + "]:\n", true);
         try {
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < iterations; i++) {
                 solveProblem(inputFolder + problemFile, restrictions, algorithm, outputFile, i);
             }
             Util::output(outputFile, "\n", true);

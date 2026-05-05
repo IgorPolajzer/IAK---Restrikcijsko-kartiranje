@@ -10,7 +10,50 @@
 #include <numeric>
 #include <sstream>
 #include <ranges>
+#include <set>
 #include <stdexcept>
+
+int Util::countFreq(const std::string& pat, const std::string& txt)
+{
+    int M = pat.length();
+    int N = txt.length();
+    int res = 0;
+
+    for (int i = 0; i <= N - M; i++) {
+        int j;
+        for (j = 0; j < M; j++)
+            if (txt[i + j] != pat[j])
+                break;
+
+        if (j == M) {
+            res++;
+        }
+    }
+    return res;
+}
+
+void generateCombinations(const std::string& current, int maxLength, const std::vector<std::string>& bases, std::set<std::string>& result) {
+    if (!current.empty()) {
+        result.insert(current);
+    }
+
+    if (current.length() == maxLength) {
+        return;
+    }
+
+    for (const auto& base : bases) {
+        generateCombinations(current + base, maxLength, bases, result);
+    }
+}
+
+std::vector<std::string> Util::getAllNucleotids(int maxLength) {
+    const std::vector<std::string> bases = {"A", "C", "G", "T"};
+    std::set<std::string> nucleotids;
+
+    generateCombinations("", maxLength, bases, nucleotids);
+
+    return std::vector(nucleotids.begin(), nucleotids.end());
+}
 
 std::vector<std::vector<size_t>> Util::getAllCombinations(const std::vector<unsigned long long> &v, const size_t r) {
     std::vector<std::vector<size_t>> results;

@@ -33,6 +33,10 @@ public:
 
     static void output(std::ostream &file, const std::string &msg, bool print);
 
+    static int countFreq(const std::string &pat, const std::string &txt);
+
+    static std::vector<std::string> getAllNucleotids(int maxLength);
+
     static std::vector<std::vector<size_t>> getAllCombinations(const std::vector<unsigned long long> & vector, size_t size);
 
     static std::vector<std::string> splitRestrictions(const std::string &filePath);
